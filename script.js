@@ -1108,48 +1108,38 @@ document.getElementById("bio-password").value;
 
 const response = await fetch("/api/login",{
 
-
 method:"POST",
-
 
 headers:{
 
-
 "Content-Type":"application/json"
-
 
 },
 
-
 body:JSON.stringify({
 
-password:password
+password: password
 
 })
-
 
 });
 
 
 
-const data =
-await response.json();
-
+const data = await response.json();
 
 
 
 if(data.success){
 
 
-window.location.href =
-"private-bio.html";
+window.location.href = "/private/";
 
 
 }else{
 
 
 document.getElementById("bio-message").innerHTML =
-
 "❌ Falsches Passwort";
 
 
