@@ -938,3 +938,71 @@ console.log(
 "🚀 JustinByte.exe Portfolio erfolgreich geladen"
 
 );
+
+const contactForm = document.getElementById("contact-form");
+
+
+if(contactForm){
+
+
+contactForm.addEventListener("submit", async (e)=>{
+
+
+e.preventDefault();
+
+
+
+const formData = new FormData(contactForm);
+
+
+
+const data = {
+
+name:formData.get("name"),
+
+email:formData.get("email"),
+
+message:formData.get("message")
+
+};
+
+
+
+const response = await fetch("/api/contact",{
+
+method:"POST",
+
+headers:{
+
+"Content-Type":"application/json"
+
+},
+
+body:JSON.stringify(data)
+
+});
+
+
+
+if(response.ok){
+
+
+alert("Nachricht erfolgreich gesendet ✅");
+
+contactForm.reset();
+
+
+}else{
+
+
+alert("Fehler beim Senden ❌");
+
+
+}
+
+
+
+});
+
+
+}

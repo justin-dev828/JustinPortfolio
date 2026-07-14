@@ -1,0 +1,24 @@
+{
+  "name": "justinportfolio",
+  "version": "1.0.0",
+  "description": "Mein persönliches Developer Portfolio.",
+  "main": "config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justin-dev828/JustinPortfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/justin-dev828/JustinPortfolio/issues"
+  },
+  "homepage": "https://github.com/justin-dev828/JustinPortfolio#readme",
+  "dependencies": {
+    "resend": "^6.17.2"
+  }
+}
