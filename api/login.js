@@ -1,41 +1,26 @@
-export default async function handler(req,res){
+export default async function handler(req, res) {
 
-
-    if(req.method !== "POST"){
-
+    if (req.method !== "POST") {
         return res.status(405).json({
-            error:"Method not allowed"
+            success: false
         });
-
     }
 
+    const { password } = req.body;
 
-
-    const {
-        password
-    } = req.body;
-
-
-
-    if(password === process.env.BIO_PASSWORD){
-
-
-        return res.status(200).json({
-
-            success:true
-
+    if (password !== process.env.BIO_PASSWORD) {
+        return res.status(401).json({
+            success: false
         });
-
-
     }
 
+    res.setHeader(
+        "Set-Cookie",
+        "bio_auth=true; HttpOnly; Secure; SameSite=Strict; Path=/; Max-Age=86400"
+    );
 
-
-    return res.status(401).json({
-
-        success:false
-
+    res.status(200).json({
+        success: true
     });
-
 
 }
