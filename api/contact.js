@@ -1,73 +1,71 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.re_FB9afm7H_91GPr8vVFA7Drw7DMdGC7WCT);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 
 export default async function handler(req, res) {
 
-    if(req.method !== "POST") {
-
+    if (req.method !== "POST") {
         return res.status(405).json({
-            error:"Method not allowed"
+            error: "Method not allowed"
         });
-
     }
 
 
     try {
 
-
-        const {
-            name,
-            email,
-            message
-        } = req.body;
+        const { name, email, message } = req.body;
 
 
+        if (!name || !email || !message) {
 
-        await resend.emails.send({
+            return res.status(400).json({
+                error: "Missing data"
+            });
 
-            from:"JustinByte Portfolio <onboarding@resend.dev>",
+        }
 
-            to:"justin.cf879@gmail.com",
 
-            subject:"Neue Nachricht von deinem Portfolio",
+        const result = await resend.emails.send({
 
-            html:`
+            from: "onboarding@resend.dev",
 
-            <h2>Neue Portfolio Nachricht</h2>
+            to: "justin.cf879@gmail.com",
+
+            subject: "Neue Nachricht vom Portfolio",
+
+            html: `
+            <h2>Neue Kontaktanfrage</h2>
 
             <p><b>Name:</b> ${name}</p>
 
-            <p><b>E-Mail:</b> ${email}</p>
+            <p><b>Email:</b> ${email}</p>
 
             <p><b>Nachricht:</b></p>
 
             <p>${message}</p>
-
             `
 
         });
 
 
+        return res.status(200).json({
 
-        res.status(200).json({
-
-            success:true
+            success:true,
+            id:result.data?.id
 
         });
 
 
-
-    } catch(error){
-
-
-        console.error(error);
+    } catch(error) {
 
 
-        res.status(500).json({
+        console.error("RESEND ERROR:", error);
 
-            error:"Mail konnte nicht gesendet werden"
+
+        return res.status(500).json({
+
+            error:error.message
 
         });
 
