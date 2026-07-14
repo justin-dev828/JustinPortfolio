@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/private/:path*",
+      "destination": "/api/private"
+    }
+  ]
+}

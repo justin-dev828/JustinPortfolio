@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="de">
 
+<script>
+
+fetch("/api/me")
+.then(res=>{
+
+if(!res.ok){
+
+window.location.href="/#private-bio";
+
+}
+
+})
+
+</script>
+
 <head>
 
 <meta charset="UTF-8">
