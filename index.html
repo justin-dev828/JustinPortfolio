@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Justin | Developer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script defer src="script.js"></script>
+<meta name="description" content="JustinByte.exe - Developer Portfolio. Webseiten, Discord Projekte, Minecraft und Technik.">
+
+
+<meta name="keywords" content="JustinByte, Developer, Webentwicklung, Discord, Minecraft, Portfolio">
+
+
+<meta name="author" content="Justin">
+
+
+<meta property="og:title" content="JustinByte.exe">
+
+
+<meta property="og:description" content="Developer Portfolio von Justin">
+
+
+<meta property="og:type" content="website">
+
+
+<link rel="icon" href="assets/img/favicon.png">
+</head>
+
+<body>
+<canvas id="stars"></canvas>
+<div class="loader">
+
+    <div class="loader-content">
+
+        <h1>
+            JustinByte.exe
+        </h1>
+
+        <div class="loading-bar">
+
+            <div></div>
+
+        </div>
+
+        <p>
+            Loading Portfolio...
+        </p>
+
+    </div>
+
+</div>
+    <!-- Hintergrund -->
+    <div class="background"></div>
+
+    <!-- Navigation -->
+    <nav>
+
+        <div class="logo">
+            JustinByte.exe
+        </div>
+
+        <div class="menu">
+
+<li><a href="#">Home</a></li>
+
+            <li><a href="#about">Über mich</a></li>
+
+            <li><a href="#projects">Projekte</a></li>
+
+            <li><a href="#contact">Kontakt</a></li>
+
+</div>
+
+
+<ul id="nav-links">
+<button id="theme-toggle">
+🌙
+</button>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+
+        <h1>
+            Hallo, ich bin
+            <span>Justin</span>
+        </h1>
+
+        <h2 id="typing"></h2>
+
+        <p>
+            Schüler • Developer • Discord Administrator
+        </p>
+
+        <button onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+            Projekte ansehen
+        </button>
+
+    </section>
+<section id="profile">
+
+<div class="container">
+
+
+<div class="profile-card">
+
+
+<img src="assets/img/profil.png" class="profile-image">
+
+
+<h2>
+Justin
+</h2>
+
+
+<p class="status">
+🟢 Available for Projects
+</p>
+
+
+<p>
+
+Developer • Discord Administrator • Minecraft Creator
+
+</p>
+
+
+<div class="profile-buttons">
+
+
+<a href="#">
+GitHub
+</a>
+
+
+<a href="#">
+Discord
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+    <!-- Über mich -->
+    <section id="about">
+
+        <div class="container">
+
+            <h2>Über mich</h2>
+
+            <div class="about-card">
+
+                <p>
+                    Hallo 👋<br><br>
+
+                    Ich bin <strong>Justin</strong>.
+
+                    Ich entwickle moderne Webseiten,
+                    Discord-Projekte und Community-Systeme.
+
+                    <br><br>
+
+                    Außerdem interessiere ich mich für
+
+                    <br>💻 Webentwicklung
+                    <br>🎮 Minecraft
+                    <br>🐧 Linux
+                    <br>🚒 Feuerwehr
+                    <br>🤖 Discord Bots
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+<section id="badges">
+
+
+<h2>Auszeichnungen</h2>
+
+
+<div class="badges">
+
+
+<div>
+🏆 Discord Manager
+</div>
+
+
+<div>
+💻 Developer
+</div>
+
+
+<div>
+🚒 Feuerwehr Fan
+</div>
+
+
+<div>
+🎮 Gamer
+</div>
+
+
+</div>
+
+
+</section>
+
+
+    <!-- Karten -->
+    <section id="cards">
+
+        <div class="container">
+
+            <div class="glass-card">
+
+                <h3>💻 Developer</h3>
+
+                <p>
+                    HTML, CSS, JavaScript und moderne Webseiten.
+                </p>
+
+            </div>
+
+            <div class="glass-card">
+
+                <h3>🎮 Minecraft</h3>
+
+                <p>
+                    Server, Mods, Communities und eigene Projekte.
+                </p>
+
+            </div>
+
+            <div class="glass-card">
+
+                <h3>🤖 Discord</h3>
+
+                <p>
+                    Server-Management, Bots, Tickets und Community-Aufbau.
+                </p>
+
+            </div>
+
+            <div class="glass-card">
+
+                <h3>🚒 Feuerwehr</h3>
+
+                <p>
+                    Technik, Einsatzfahrzeuge und alles rund um die Feuerwehr.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Projekte -->
+
+<section id="projects">
+
+<div class="container">
+
+<h2>Meine Projekte</h2>
+
+
+<div class="projects-grid">
+
+
+<div class="project-card">
+
+
+<img src="assets/img/discord.jpg">
+
+
+<h3>Discord Projekte</h3>
+
+
+<p>
+
+Discord Server,
+Bots,
+Ticketsysteme und Community-Systeme.
+
+</p>
+
+
+<a href="#">
+Mehr erfahren
+</a>
+
+
+</div>
+
+
+
+<div class="project-card">
+
+
+<img src="assets/img/minecraft.jpg">
+
+
+<h3>Minecraft Projekte</h3>
+
+
+<p>
+
+Server,
+Mods,
+Ressourcenpakete und Communities.
+
+</p>
+
+
+<a href="#">
+Mehr erfahren
+</a>
+
+
+</div>
+
+
+
+
+<div class="project-card">
+
+
+<img src="assets/img/web.jpg">
+
+
+<h3>Webentwicklung</h3>
+
+
+<p>
+
+Moderne Webseiten mit HTML,
+CSS und JavaScript.
+
+</p>
+
+
+<a href="#">
+Mehr erfahren
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+<section id="github-projects">
+
+<h2>GitHub Projekte</h2>
+
+<div id="repos"></div>
+
+</section>
+
+<section id="github">
+
+
+<div class="container">
+
+
+<h2>GitHub</h2>
+
+
+<div class="github-card">
+
+
+<img src="https://github-readme-stats.vercel.app/api?username=justin-dev828&show_icons=true&theme=tokyonight">
+
+
+</div>
+
+
+</div>
+
+
+</section>
+    <!-- Kontakt -->
+<section id="contact">
+
+
+<div class="container">
+
+
+<h2>Kontakt</h2>
+
+
+<div class="contact-box">
+
+
+<h3>
+Schreib mir eine Nachricht
+</h3>
+
+
+<form action="https://formsubmit.co/justin.cf879@gmail.com" method="POST">
+
+
+<input 
+name="name"
+placeholder="Dein Name"
+required>
+
+
+<input
+name="email"
+placeholder="Deine E-Mail"
+required>
+
+
+<textarea
+
+name="message"
+
+placeholder="Deine Nachricht"
+
+required>
+
+</textarea>
+
+
+<button>
+Nachricht senden
+</button>
+
+
+</form>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+<section id="skills">
+
+<div class="container">
+
+<h2>Meine Skills</h2>
+
+<div class="skill">
+
+<div class="skill-title">
+<span>HTML</span>
+<span>90%</span>
+</div>
+
+<div class="skill-bar">
+<div class="skill-progress html"></div>
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-title">
+<span>CSS</span>
+<span>85%</span>
+</div>
+
+<div class="skill-bar">
+<div class="skill-progress css"></div>
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-title">
+<span>JavaScript</span>
+<span>70%</span>
+</div>
+
+<div class="skill-bar">
+<div class="skill-progress js"></div>
+</div>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-title">
+<span>Discord Management</span>
+<span>95%</span>
+</div>
+
+<div class="skill-bar">
+<div class="skill-progress discord"></div>
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+<section id="discord-status">
+
+<h2>
+Discord Status
+</h2>
+
+
+<div class="status-card">
+
+<p id="discord-text">
+
+Lade Status...
+
+</p>
+
+
+</div>
+
+
+</section>
+
+<section id="discord">
+
+
+<div class="container">
+
+
+<h2>Discord Community</h2>
+
+
+<iframe
+
+src="https://discord.com/widget?id=1516100446807396533&theme=dark"
+
+width="350"
+
+height="500"
+
+allowtransparency="true"
+
+frameborder="0">
+
+
+</iframe>
+
+
+</div>
+<div class="counter">
+
+Besucher:
+
+<img src="https://visitor-badge.laobi.icu/badge?page_id=JustinByte">
+
+</div>
+
+</section>
+
+</body>
+
+</html>
