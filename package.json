@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/justin-dev828/JustinPortfolio#readme",
   "dependencies": {
+    "iron-session": "^8.0.4",
     "resend": "^6.17.2"
   }
 }
