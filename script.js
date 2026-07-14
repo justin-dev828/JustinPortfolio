@@ -510,97 +510,133 @@ window.addEventListener("load",()=>{
 // ================================
 
 
-const discordID = "1400088747894378711";
-
-const discordText = document.getElementById("discord-text");
-
-
-async function loadDiscordStatus(){
-
-try{
+const discordID =
+"1400088747894378711";
 
 
-const res = await fetch(
+const discordText =
+document.getElementById("discord-text");
+
+
+
+if(discordText){
+
+
+fetch(
+
 `https://api.lanyard.rest/v1/users/${discordID}`
-);
+
+)
 
 
-const json = await res.json();
+.then(response=>response.json())
 
 
+.then(data=>{
 
-if(!json.success || !json.data.discord_user){
 
-discordText.innerHTML =
-"⚫ Discord nicht verbunden";
-
-return;
-
-}
+    const user =
+    data.data;
 
 
 
-const data = json.data;
+    if(user.activities.length > 0){
 
 
 
-let status = "⚪ Offline";
+        discordText.innerHTML = `
 
 
-if(data.discord_status === "online"){
-status="🟢 Online";
-}
+        🟢 Online<br>
 
-if(data.discord_status === "idle"){
-status="🌙 Abwesend";
-}
+        🎮 ${user.activities[0].name}
 
-if(data.discord_status === "dnd"){
-status="🔴 Nicht stören";
-}
+
+        `;
 
 
 
-let activity="Keine Aktivität";
+    }else{
 
 
-if(data.activities.length){
+        discordText.innerHTML =
 
-activity =
-data.activities[0].name;
-
-}
+        "🟢 Online";
 
 
+    }
 
-discordText.innerHTML=`
 
-${status}
 
-<br><br>
+})
 
-🎮 ${activity}
 
-`;
+.catch(()=>{
 
+
+    discordText.innerHTML =
+
+    "⚫ Status nicht verfügbar";
+
+
+});
 
 
 }
 
-catch(error){
-
-discordText.innerHTML=
-"❌ Fehler beim Laden";
-
-}
-
-
-}
-
-
-loadDiscordStatus();
 
 
 console.log(
 "JustinByte.exe Portfolio erfolgreich geladen 🚀"
 );
+
+fetch("/api/github")
+
+.then(response => response.json())
+
+.then(data => {
+
+
+document.getElementById("github-card").innerHTML = `
+
+
+<img 
+src="${data.avatar}"
+class="github-avatar"
+>
+
+
+<h3>
+${data.username}
+</h3>
+
+
+<p>
+📦 ${data.repos} öffentliche Projekte
+</p>
+
+
+<p>
+👥 ${data.followers} Follower
+</p>
+
+
+<p>
+➡️ Folgt ${data.following} Personen
+</p>
+
+
+`;
+
+
+})
+
+.catch(()=>{
+
+
+document.getElementById("github-card").innerHTML =
+
+"❌ GitHub Daten konnten nicht geladen werden";
+
+
+});

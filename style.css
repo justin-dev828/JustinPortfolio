@@ -1523,3 +1523,59 @@ a,
 
 
 }
+
+.github-card{
+
+background:rgba(255,255,255,.06);
+
+backdrop-filter:blur(20px);
+
+padding:40px;
+
+border-radius:30px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,.1);
+
+box-shadow:
+0 0 30px rgba(56,189,248,.2);
+
+}
+
+
+.github-avatar{
+
+width:120px;
+
+height:120px;
+
+border-radius:50%;
+
+border:3px solid var(--blue);
+
+box-shadow:
+
+0 0 25px var(--blue);
+
+}
+
+
+.github-card h3{
+
+font-size:30px;
+
+color:var(--blue);
+
+margin:20px;
+
+}
+
+
+.github-card p{
+
+font-size:18px;
+
+margin:10px;
+
+}
