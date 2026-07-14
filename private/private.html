@@ -10,28 +10,21 @@
 
 <link rel="stylesheet" href="../style.css">
 
+
 <style>
 
 .private-page {
 
     min-height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    padding:30px;
+    padding:120px 30px;
 
 }
 
 
 .bio-card {
 
-    max-width:800px;
-
-    width:100%;
+    max-width:900px;
+    margin:auto;
 
     padding:50px;
 
@@ -43,9 +36,11 @@
 
     border:1px solid rgba(255,255,255,.1);
 
-    box-shadow:0 0 40px rgba(56,189,248,.25);
+    box-shadow:
+    0 0 40px rgba(56,189,248,.25);
 
 }
+
 
 
 .bio-card h1 {
@@ -54,22 +49,27 @@
 
     color:#38bdf8;
 
-    font-size:45px;
+    font-size:50px;
 
-    text-shadow:0 0 20px #38bdf8;
+    text-shadow:
+    0 0 20px #38bdf8;
 
-    margin-bottom:30px;
+    margin-bottom:50px;
 
 }
+
 
 
 .bio-card h2 {
 
     color:#8b5cf6;
 
-    margin-top:30px;
+    margin-top:40px;
+
+    margin-bottom:15px;
 
 }
+
 
 
 .bio-card p {
@@ -83,20 +83,52 @@
 }
 
 
+
+.bio-card ul {
+
+    color:white;
+
+    line-height:2;
+
+    margin-left:25px;
+
+    font-size:18px;
+
+}
+
+
+
+.quote {
+
+    margin-top:30px;
+
+    padding:25px;
+
+    border-left:4px solid #38bdf8;
+
+    background:rgba(56,189,248,.1);
+
+    font-size:20px;
+
+    font-style:italic;
+
+}
+
+
+
 .logout {
 
-    margin-top:40px;
-
-    display:block;
+    margin-top:50px;
 
     text-align:center;
 
 }
 
 
+
 .logout button {
 
-    padding:15px 40px;
+    padding:15px 45px;
 
     border:none;
 
@@ -108,32 +140,62 @@
 
     font-size:16px;
 
-    background:linear-gradient(45deg,#38bdf8,#8b5cf6);
+    background:
+
+    linear-gradient(
+    45deg,
+    #38bdf8,
+    #8b5cf6
+    );
+
+
+    transition:.3s;
 
 }
+
+
+
+.logout button:hover {
+
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 30px #38bdf8;
+
+}
+
 
 
 </style>
 
+
 </head>
+
 
 
 <body>
 
-    <script>
+
+<!-- Schutzprüfung -->
+
+<script>
 
 fetch("/api/me")
+
 .then(res=>{
 
-if(!res.ok){
+    if(!res.ok){
 
-window.location.href="/#private-bio";
+        window.location.href="/#private-bio";
 
-}
+    }
 
-})
+});
+
 
 </script>
+
+
 
 <div class="private-page">
 
@@ -141,9 +203,11 @@ window.location.href="/#private-bio";
 <div class="bio-card">
 
 
+
 <h1>
 🔐 Private Bio
 </h1>
+
 
 
 <h2>
@@ -153,55 +217,279 @@ window.location.href="/#private-bio";
 
 <p>
 
-Hallo, ich bin Justin.
+Mein Name ist <strong>Justin</strong>. 
+Ich bin ein technikbegeisterter Schüler, der sich in seiner Freizeit intensiv mit Computern, Servern und Software beschäftigt.
 
 <br><br>
 
-Ich entwickle Webseiten, Discord-Projekte und beschäftige mich mit Technik, Linux und Gaming.
+Neue Dinge zu lernen und Herausforderungen zu lösen gehören für mich dazu. Besonders interessieren mich IT, Programmierung, Netzwerke und die Entwicklung eigener Projekte.
 
 </p>
 
 
 
+
+
 <h2>
-Meine Projekte
+Meine Interessen
 </h2>
 
 
 <p>
 
-💻 Webentwicklung
+Ein großer Teil meiner Freizeit dreht sich um Technik.
 
-<br>
+<br><br>
 
-🤖 Discord Bots
+Ich beschäftige mich mit Windows und Linux, probiere virtuelle Maschinen aus und lerne, wie verschiedene Systeme funktionieren.
 
-<br>
+<br><br>
 
-🎮 Minecraft Projekte
+Außerdem entwickle ich gerne Discord-Server, Bots, Webseiten und andere technische Projekte.
 
-<br>
+<br><br>
 
-🚒 Feuerwehr & Technik
+Neben Technik spiele ich gerne:
+
+</p>
+
+
+<ul>
+
+<li>🎮 Minecraft</li>
+
+<li>🚗 FiveM</li>
+
+<li>🏎️ GTA Online</li>
+
+<li>🧱 Roblox</li>
+
+</ul>
+
+
+<p>
+
+Dabei interessiert mich nicht nur das Spielen, sondern auch das Organisieren von Communities und das Entwickeln von Roleplay-Ideen.
 
 </p>
 
 
 
+
+
+
 <h2>
-Kontakt
+Discord & Community Management
 </h2>
 
 
 <p>
 
-Dieser Bereich ist privat und nur für freigegebene Personen sichtbar.
+Ich habe bereits an mehreren Discord-Servern gearbeitet und Zeit in deren Aufbau investiert.
 
 </p>
+
+
+<ul>
+
+<li>Serverstrukturen erstellen</li>
+
+<li>Regelwerke schreiben</li>
+
+<li>Ankündigungen verfassen</li>
+
+<li>Partnerschaften bearbeiten</li>
+
+<li>Bewerbungsformulare entwickeln</li>
+
+<li>Community unterstützen</li>
+
+</ul>
+
+
+<p>
+
+Mir ist wichtig, dass eine Community freundlich, respektvoll und gut organisiert ist.
+
+</p>
+
+
+
+
+
+
+<h2>
+🚒 Feuerwehr
+</h2>
+
+
+<p>
+
+Ein besonderes Interesse von mir gilt der Feuerwehr.
+
+<br><br>
+
+Dieses Interesse spiegelt sich auch in meinen Roleplay-Projekten wider.
+
+<br><br>
+
+Ich beschäftige mich gerne mit Feuerwehrfahrzeugen, Einsätzen und Organisationsstrukturen und bringe dieses Wissen in meine Projekte ein.
+
+</p>
+
+
+
+
+
+
+
+<h2>
+Kreativität
+</h2>
+
+
+<p>
+
+Ich arbeite gerne an Designs für Banner, Logos und Profilbilder.
+
+<br><br>
+
+Moderne Neon-Effekte, technische Designs und futuristische Elemente gefallen mir besonders.
+
+<br><br>
+
+Ich finde es spannend, Technik und Kreativität miteinander zu verbinden.
+
+</p>
+
+
+
+
+
+
+
+<h2>
+Eigenschaften
+</h2>
+
+
+<ul>
+
+<li>Neugierig</li>
+
+<li>Lernbereit</li>
+
+<li>Kreativ</li>
+
+<li>Hilfsbereit</li>
+
+<li>Engagiert</li>
+
+<li>Zuverlässig</li>
+
+<li>Ehrgeizig</li>
+
+<li>Technisch interessiert</li>
+
+<li>Ausdauernd</li>
+
+<li>Organisiert</li>
+
+</ul>
+
+
+
+
+
+
+
+<h2>
+Herausforderungen
+</h2>
+
+
+<p>
+
+Nicht alles läuft immer problemlos.
+
+<br><br>
+
+Gerade bei technischen Projekten gibt es Fehler oder Rückschläge. Trotzdem suche ich nach Lösungen und probiere verschiedene Wege aus.
+
+<br><br>
+
+Diese Erfahrungen haben mich geprägt und mir gezeigt, wie wichtig Vertrauen, Unterstützung und Menschen sind, auf die man sich verlassen kann.
+
+</p>
+
+
+
+
+
+
+
+<h2>
+Meine Ziele
+</h2>
+
+
+<p>
+
+Ich möchte meine Kenntnisse im IT-Bereich kontinuierlich erweitern.
+
+</p>
+
+
+<ul>
+
+<li>Softwareentwicklung</li>
+
+<li>Webentwicklung</li>
+
+<li>Serveradministration</li>
+
+<li>Netzwerke</li>
+
+<li>Cybersecurity</li>
+
+<li>Linux</li>
+
+<li>Discord-Bot-Entwicklung</li>
+
+</ul>
+
+
+<p>
+
+Langfristig möchte ich eigene größere Projekte entwickeln und mein Wissen weiter ausbauen.
+
+</p>
+
+
+
+
+
+
+
+<h2>
+Mein Motto
+</h2>
+
+
+<div class="quote">
+
+"Jede Herausforderung ist eine Gelegenheit, etwas Neues zu lernen."
+
+</div>
+
+
+
+
 
 
 
 <div class="logout">
+
 
 <button onclick="logout()">
 
@@ -209,13 +497,19 @@ Abmelden
 
 </button>
 
+
+</div>
+
+
+
 </div>
 
 
 </div>
 
 
-</div>
+
+
 
 
 
@@ -228,13 +522,14 @@ async function logout(){
 await fetch("/api/logout");
 
 
-window.location.href="/login.html";
+window.location.href="/#private-bio";
 
 
 }
 
 
 </script>
+
 
 
 </body>
