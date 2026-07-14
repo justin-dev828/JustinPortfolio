@@ -1133,7 +1133,7 @@ const data = await response.json();
 if(data.success){
 
 
-window.location.href = "/private/";
+window.location.href = "/private/private.html";
 
 
 }else{
