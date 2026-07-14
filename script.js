@@ -35,48 +35,69 @@ function type(){
 
     if(!deleting){
 
-        typing.textContent = current.substring(0,charIndex);
+
+        typing.textContent =
+        current.substring(0,charIndex);
+
 
         charIndex++;
 
 
         if(charIndex > current.length){
 
+
             deleting = true;
+
 
             setTimeout(type,1500);
 
+
             return;
+
         }
 
 
     } else {
 
 
-        typing.textContent = current.substring(0,charIndex);
+        typing.textContent =
+        current.substring(0,charIndex);
+
 
         charIndex--;
 
 
+
         if(charIndex < 0){
+
 
             deleting = false;
 
-            index = (index + 1) % texts.length;
+
+            index =
+            (index + 1) % texts.length;
+
 
             charIndex = 0;
 
+
         }
+
 
     }
 
 
-    setTimeout(type,deleting ? 60 : 100);
+    setTimeout(
+        type,
+        deleting ? 60 : 100
+    );
 
 }
 
 
 type();
+
+
 
 
 
@@ -91,17 +112,21 @@ document.querySelectorAll("nav a").forEach(link=>{
     link.addEventListener("click",e=>{
 
 
-        const target = link.getAttribute("href");
+        const target =
+        link.getAttribute("href");
 
 
-        if(target.startsWith("#")){
+
+        if(target && target.startsWith("#")){
 
 
             const section =
             document.querySelector(target);
 
 
+
             if(section){
+
 
                 e.preventDefault();
 
@@ -112,7 +137,9 @@ document.querySelectorAll("nav a").forEach(link=>{
 
                 });
 
+
             }
+
 
         }
 
@@ -121,6 +148,8 @@ document.querySelectorAll("nav a").forEach(link=>{
 
 
 });
+
+
 
 
 
@@ -133,6 +162,7 @@ const projectButton =
 document.querySelector(".hero button");
 
 
+
 if(projectButton){
 
 
@@ -143,13 +173,16 @@ if(projectButton){
         document.getElementById("projects");
 
 
+
         if(projects){
+
 
             projects.scrollIntoView({
 
                 behavior:"smooth"
 
             });
+
 
         }
 
@@ -161,12 +194,16 @@ if(projectButton){
 
 
 
+
+
 // ================================
 // Maus Glow Effekt
 // ================================
 
 
-document.addEventListener("mousemove",(e)=>{
+document.addEventListener(
+"mousemove",
+(e)=>{
 
 
     document.documentElement.style.setProperty(
@@ -176,6 +213,7 @@ document.addEventListener("mousemove",(e)=>{
         e.clientX + "px"
 
     );
+
 
 
     document.documentElement.style.setProperty(
@@ -189,8 +227,6 @@ document.addEventListener("mousemove",(e)=>{
 
 });
 
-
-
 // ================================
 // Dark Mode
 // ================================
@@ -203,16 +239,57 @@ document.getElementById("theme-toggle");
 if(toggle){
 
 
+    const savedTheme =
+    localStorage.getItem("theme");
+
+
+
+    if(savedTheme === "light"){
+
+
+        document.body.classList.add("light");
+
+
+    }
+
+
+
+
     toggle.addEventListener("click",()=>{
 
 
         document.body.classList.toggle("light");
 
 
+
+        if(document.body.classList.contains("light")){
+
+
+            localStorage.setItem(
+                "theme",
+                "light"
+            );
+
+
+        } else {
+
+
+            localStorage.setItem(
+                "theme",
+                "dark"
+            );
+
+
+        }
+
+
     });
 
 
 }
+
+
+
 
 
 
@@ -227,6 +304,7 @@ document.querySelector(".menu");
 
 const nav =
 document.getElementById("nav-links");
+
 
 
 if(menu && nav){
@@ -245,6 +323,10 @@ if(menu && nav){
 
 
 
+
+
+
+
 // ================================
 // Sterne Hintergrund
 // ================================
@@ -254,11 +336,13 @@ const canvas =
 document.getElementById("stars");
 
 
+
 if(canvas){
 
 
     const ctx =
     canvas.getContext("2d");
+
 
 
     canvas.width =
@@ -270,25 +354,27 @@ if(canvas){
 
 
 
-    let stars=[];
+    let stars = [];
 
 
 
-    for(let i=0;i<150;i++){
+    for(let i = 0; i < 150; i++){
 
 
         stars.push({
 
-            x:Math.random()*canvas.width,
+            x: Math.random() * canvas.width,
 
-            y:Math.random()*canvas.height,
+            y: Math.random() * canvas.height,
 
-            size:Math.random()*2
+            size: Math.random() * 2
 
         });
 
 
     }
+
+
 
 
 
@@ -308,7 +394,8 @@ if(canvas){
         );
 
 
-        ctx.fillStyle="white";
+
+        ctx.fillStyle = "white";
 
 
 
@@ -316,6 +403,7 @@ if(canvas){
 
 
             ctx.beginPath();
+
 
 
             ctx.arc(
@@ -333,7 +421,9 @@ if(canvas){
             );
 
 
+
             ctx.fill();
+
 
 
 
@@ -341,42 +431,60 @@ if(canvas){
 
 
 
+
             if(star.y > canvas.height){
+
 
                 star.y = 0;
 
+
             }
+
 
 
         });
 
 
 
-        requestAnimationFrame(animateStars);
+
+        requestAnimationFrame(
+            animateStars
+        );
 
 
     }
+
 
 
     animateStars();
 
 
 
-    window.addEventListener("resize",()=>{
+
+
+
+    window.addEventListener(
+    "resize",
+    ()=>{
 
 
         canvas.width =
         window.innerWidth;
 
 
+
         canvas.height =
         window.innerHeight;
+
 
 
     });
 
 
 }
+
+
+
 
 
 
@@ -390,7 +498,9 @@ const repoBox =
 document.getElementById("repos");
 
 
+
 if(repoBox){
+
 
 
 fetch(
@@ -400,13 +510,37 @@ fetch(
 )
 
 
-.then(response=>response.json())
+
+.then(response=>{
+
+
+    if(!response.ok){
+
+        throw new Error(
+            "GitHub API Fehler"
+        );
+
+    }
+
+
+    return response.json();
+
+
+})
+
 
 
 .then(repos=>{
 
 
-    repos.slice(0,6).forEach(repo=>{
+
+    repoBox.innerHTML = "";
+
+
+
+    repos
+    .slice(0,6)
+    .forEach(repo=>{
 
 
         repoBox.innerHTML += `
@@ -422,6 +556,7 @@ fetch(
             </h3>
 
 
+
             <p>
 
             ${repo.description ?? "Keine Beschreibung"}
@@ -429,11 +564,17 @@ fetch(
             </p>
 
 
-            <a href="${repo.html_url}" target="_blank">
+
+            <a 
+            href="${repo.html_url}" 
+            target="_blank">
+
 
             Projekt ansehen
 
+
             </a>
+
 
 
         </div>
@@ -445,23 +586,23 @@ fetch(
     });
 
 
+
 })
+
 
 
 .catch(()=>{
 
 
     repoBox.innerHTML =
-    "GitHub Projekte konnten nicht geladen werden.";
+
+    "❌ GitHub Projekte konnten nicht geladen werden";
 
 
 });
 
 
 }
-
-
-
 
 // ================================
 // Ladeanimation
@@ -475,19 +616,22 @@ window.addEventListener("load",()=>{
     document.querySelector(".loader");
 
 
+
     if(loader){
+
 
 
         setTimeout(()=>{
 
 
-            loader.style.opacity="0";
+            loader.style.opacity = "0";
+
 
 
             setTimeout(()=>{
 
 
-                loader.style.display="none";
+                loader.style.display = "none";
 
 
             },500);
@@ -495,6 +639,7 @@ window.addEventListener("load",()=>{
 
 
         },2500);
+
 
 
     }
@@ -505,13 +650,18 @@ window.addEventListener("load",()=>{
 
 
 
+
+
+
+
 // ================================
-// Discord Status (Lanyard)
+// Discord Status (Lanyard API)
 // ================================
 
 
 const discordID =
 "1400088747894378711";
+
 
 
 const discordText =
@@ -522,6 +672,7 @@ document.getElementById("discord-text");
 if(discordText){
 
 
+
 fetch(
 
 `https://api.lanyard.rest/v1/users/${discordID}`
@@ -529,10 +680,28 @@ fetch(
 )
 
 
-.then(response=>response.json())
+
+.then(response=>{
+
+
+    if(!response.ok){
+
+        throw new Error(
+            "Discord API Fehler"
+        );
+
+    }
+
+
+    return response.json();
+
+
+})
+
 
 
 .then(data=>{
+
 
 
     const user =
@@ -540,35 +709,45 @@ fetch(
 
 
 
+
+    let activity =
+    "Keine Aktivität";
+
+
+
+
+
     if(user.activities.length > 0){
 
 
-
-        discordText.innerHTML = `
-
-
-        🟢 Online<br>
-
-        🎮 ${user.activities[0].name}
-
-
-        `;
-
-
-
-    }else{
-
-
-        discordText.innerHTML =
-
-        "🟢 Online";
+        activity =
+        user.activities[0].name;
 
 
     }
 
 
 
+
+
+
+    discordText.innerHTML = `
+
+
+    🟢 Online
+
+    <br>
+
+    🎮 ${activity}
+
+
+    `;
+
+
+
+
 })
+
 
 
 .catch(()=>{
@@ -576,76 +755,186 @@ fetch(
 
     discordText.innerHTML =
 
-    "⚫ Status nicht verfügbar";
+
+    "⚫ Discord Status nicht verfügbar";
+
 
 
 });
+
 
 
 }
 
 
 
-console.log(
-"JustinByte.exe Portfolio erfolgreich geladen 🚀"
-);
+
+
+
+
+
+
+// ================================
+// Eigene GitHub Statistik
+// Vercel API
+// ================================
+
+
+const githubCard =
+document.getElementById("github-card");
+
+
+
+if(githubCard){
+
+
 
 fetch("/api/github")
 
-.then(response => response.json())
-
-.then(data => {
 
 
-document.getElementById("github-card").innerHTML = `
+.then(response=>{
 
 
-<img 
-src="${data.avatar}"
-class="github-avatar"
->
+    if(!response.ok){
 
 
-<h3>
-${data.username}
-</h3>
+        throw new Error(
+            "API Fehler"
+        );
 
 
-<p>
-📦 ${data.repos} öffentliche Projekte
-</p>
+    }
 
 
-<p>
-👥 ${data.followers} Follower
-</p>
-
-
-<p>
-➡️ Folgt ${data.following} Personen
-</p>
-
-
-`;
+    return response.json();
 
 
 })
 
+
+
+.then(data=>{
+
+
+
+    githubCard.innerHTML = `
+
+
+
+    <img
+
+    src="${data.avatar}"
+
+    class="github-avatar"
+
+    alt="GitHub Profilbild"
+
+
+
+    >
+
+
+
+
+    <h3>
+
+    ${data.username}
+
+    </h3>
+
+
+
+
+
+    <p>
+
+    📦 ${data.repos} öffentliche Projekte
+
+    </p>
+
+
+
+
+    <p>
+
+    👥 ${data.followers} Follower
+
+    </p>
+
+
+
+
+    <p>
+
+    ➡️ Folgt ${data.following} Personen
+
+    </p>
+
+
+
+    `;
+
+
+
+})
+
+
+
 .catch(()=>{
 
 
-document.getElementById("github-card").innerHTML =
 
-"❌ GitHub Daten konnten nicht geladen werden";
+    githubCard.innerHTML =
+
+
+
+    "❌ GitHub Statistik konnte nicht geladen werden";
+
 
 
 });
 
-<script type="module">
 
-import { inject } from 
-"https://cdn.jsdelivr.net/npm/@vercel/analytics/+esm";
 
-inject();
+}
 
-</script>
+
+
+
+
+
+
+
+// ================================
+// Bilder Lazy Loading
+// ================================
+
+
+document
+.querySelectorAll("img")
+.forEach(img=>{
+
+
+    img.loading = "lazy";
+
+
+});
+
+
+
+
+
+
+
+
+// ================================
+// Startmeldung
+// ================================
+
+
+console.log(
+
+"🚀 JustinByte.exe Portfolio erfolgreich geladen"
+
+);

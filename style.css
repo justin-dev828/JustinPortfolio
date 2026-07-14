@@ -1,16 +1,24 @@
 /* =================================
    JustinByte.exe Portfolio
-   Style.css
+   style.css
    Teil 1/3
 ================================= */
 
 
+/* ================================
+   Grund Einstellungen
+================================ */
+
+
 * {
+
     margin:0;
     padding:0;
     box-sizing:border-box;
     scroll-behavior:smooth;
+
 }
+
 
 
 :root {
@@ -29,7 +37,6 @@
 body {
 
     background:var(--background);
-
     color:var(--text);
 
     font-family:'Poppins',sans-serif;
@@ -40,18 +47,19 @@ body {
 
 
 
-/* Hintergrund */
+/* ================================
+   Hintergrund Animation
+================================ */
+
 
 .background {
 
     position:fixed;
 
     width:100%;
-
     height:100%;
 
     top:0;
-
     left:0;
 
     z-index:-1;
@@ -59,19 +67,25 @@ body {
 
     background:
 
-    radial-gradient(circle at 20% 20%,
-    rgba(56,189,248,.35),
-    transparent 35%),
+    radial-gradient(
+        circle at 20% 20%,
+        rgba(56,189,248,.35),
+        transparent 35%
+    ),
 
 
-    radial-gradient(circle at 80% 30%,
-    rgba(139,92,246,.35),
-    transparent 35%),
+    radial-gradient(
+        circle at 80% 30%,
+        rgba(139,92,246,.35),
+        transparent 35%
+    ),
 
 
-    radial-gradient(circle at 50% 80%,
-    rgba(56,189,248,.25),
-    transparent 40%);
+    radial-gradient(
+        circle at 50% 80%,
+        rgba(56,189,248,.25),
+        transparent 40%
+    );
 
 
     animation:bgMove 15s infinite alternate;
@@ -81,6 +95,7 @@ body {
 
 
 @keyframes bgMove {
+
 
     from {
 
@@ -95,14 +110,20 @@ body {
 
     }
 
+
 }
 
 
 
-/* Navigation */
+
+
+/* ================================
+   Navigation
+================================ */
 
 
 nav {
+
 
     display:flex;
 
@@ -110,164 +131,266 @@ nav {
 
     align-items:center;
 
+
     padding:25px 10%;
+
 
     position:fixed;
 
     width:100%;
 
+
     top:0;
 
     left:0;
 
-    background:rgba(5,8,22,.55);
+
+
+    background:
+
+    rgba(5,8,22,.55);
+
+
 
     backdrop-filter:blur(15px);
 
-    border-bottom:1px solid rgba(255,255,255,.1);
+
+    border-bottom:
+
+    1px solid rgba(255,255,255,.1);
+
 
     z-index:1000;
 
+
 }
+
+
 
 
 
 .logo {
 
+
     font-family:'JetBrains Mono',monospace;
+
 
     font-size:28px;
 
+
     font-weight:700;
+
 
     color:var(--blue);
 
+
     text-shadow:
+
 
     0 0 10px var(--blue),
 
+
     0 0 30px var(--blue);
 
+
 }
+
+
+
 
 
 
 nav ul {
 
+
     display:flex;
+
 
     gap:40px;
 
+
     list-style:none;
 
+
 }
+
+
+
 
 
 
 nav a {
 
+
     color:white;
+
 
     text-decoration:none;
 
+
+    font-weight:500;
+
+
     transition:.3s;
 
+
 }
+
+
 
 
 
 nav a:hover {
 
+
     color:var(--blue);
 
-    text-shadow:0 0 15px var(--blue);
+
+    text-shadow:
+
+    0 0 15px var(--blue);
+
 
 }
 
 
 
-/* Hero */
+
+
+
+
+/* ================================
+   Hero Bereich
+================================ */
 
 
 .hero {
 
+
     min-height:100vh;
+
 
     display:flex;
 
+
     justify-content:center;
+
 
     align-items:center;
 
+
     flex-direction:column;
+
 
     text-align:center;
 
+
     padding:20px;
 
+
 }
+
+
 
 
 
 .hero h1 {
 
-    font-size:clamp(45px,8vw,80px);
+
+    font-size:
+
+    clamp(45px,8vw,80px);
+
 
     margin-bottom:20px;
 
-    animation:fadeDown 1s ease;
+
+    animation:
+
+    fadeDown 1s ease;
+
 
 }
+
+
 
 
 
 .hero span {
 
+
     color:var(--blue);
+
 
     text-shadow:
 
+
     0 0 15px var(--blue),
+
 
     0 0 40px var(--blue);
 
+
 }
+
+
 
 
 
 .hero h2 {
 
-    font-size:clamp(25px,4vw,40px);
+
+    font-size:
+
+    clamp(25px,4vw,40px);
+
 
     color:var(--gray);
 
+
     height:50px;
 
-    font-family:'JetBrains Mono',monospace;
+
+    font-family:
+
+    'JetBrains Mono',monospace;
+
 
 }
+
+
 
 
 
 .hero p {
 
+
     margin-top:25px;
 
+
     font-size:22px;
+
 
 }
 
 
 
+
+
 .hero button {
+
 
     margin-top:45px;
 
+
     padding:18px 50px;
+
 
     border:none;
 
+
     border-radius:50px;
+
 
 
     background:
@@ -283,62 +406,105 @@ nav a:hover {
     );
 
 
+
     color:white;
+
 
     font-size:18px;
 
+
     font-weight:bold;
+
 
     cursor:pointer;
 
+
     transition:.4s;
 
+
+    box-shadow:
+
+    0 0 20px rgba(56,189,248,.5);
+
+
 }
+
+
 
 
 
 .hero button:hover {
 
-    transform:translateY(-5px) scale(1.05);
+
+    transform:
+
+    translateY(-5px)
+
+    scale(1.05);
+
+
 
     box-shadow:
 
+
     0 0 30px var(--blue),
+
 
     0 0 60px var(--purple);
 
+
 }
+
+
 
 
 
 @keyframes fadeDown {
 
+
     from {
+
 
         opacity:0;
 
+
         transform:translateY(-40px);
 
+
     }
+
 
 
     to {
 
+
         opacity:1;
+
 
         transform:translateY(0);
 
+
     }
+
 
 }
 
+
+
+
+
+/* Ende Teil 1 */
+
 /* =================================
    Teil 2/3
-   Cards • Projects • Skills
+   Cards • Projekte • Skills • Profil
 ================================= */
 
 
-/* Container */
+/* ================================
+   Container
+================================ */
+
 
 .container {
 
@@ -352,7 +518,10 @@ nav a:hover {
 
 
 
-/* Überschriften */
+/* ================================
+   Überschriften
+================================ */
+
 
 section h2 {
 
@@ -364,11 +533,14 @@ section h2 {
 
     color:var(--blue);
 
+
     text-shadow:
 
     0 0 15px var(--blue);
 
 }
+
+
 
 
 
@@ -385,41 +557,64 @@ section h2 {
 
 
 
+
+
 .about-card {
+
 
     background:var(--card);
 
+
     backdrop-filter:blur(20px);
+
 
     padding:50px;
 
+
     border-radius:30px;
 
-    border:1px solid rgba(255,255,255,.1);
+
+    border:
+
+    1px solid rgba(255,255,255,.1);
+
 
     box-shadow:
 
+
     0 0 40px rgba(56,189,248,.15);
+
 
     font-size:20px;
 
+
     line-height:2;
+
 
     transition:.4s;
 
+
 }
+
 
 
 
 .about-card:hover {
 
+
     transform:translateY(-10px);
+
+
 
     box-shadow:
 
+
     0 0 40px rgba(56,189,248,.4);
 
+
 }
+
+
 
 
 
@@ -430,35 +625,49 @@ section h2 {
 
 .glass-card {
 
+
     background:
 
     rgba(255,255,255,.06);
 
+
     backdrop-filter:blur(20px);
+
 
     padding:40px;
 
+
     border-radius:25px;
+
 
     border:
 
     1px solid rgba(255,255,255,.1);
 
+
     position:relative;
+
 
     overflow:hidden;
 
+
     transition:.4s;
 
+
     transform-style:preserve-3d;
+
 
 }
 
 
 
+
+
 .glass-card:hover {
 
+
     transform:
+
 
     translateY(-15px)
 
@@ -467,35 +676,94 @@ section h2 {
     rotateY(-5deg);
 
 
+
     border-color:var(--blue);
+
+
 
     box-shadow:
 
+
     0 0 40px rgba(56,189,248,.5);
 
+
 }
+
+
 
 
 
 .glass-card h3 {
 
+
     color:var(--blue);
+
 
     font-size:28px;
 
+
     margin-bottom:20px;
 
+
 }
+
+
 
 
 
 .glass-card p {
 
+
     color:#ddd;
+
 
     line-height:1.7;
 
+
 }
+
+
+
+
+
+
+
+/* ================================
+   Karten Bereich
+================================ */
+
+
+#cards {
+
+
+    padding:100px 0;
+
+
+}
+
+
+
+#cards .container {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+
+    repeat(auto-fit,minmax(260px,1fr));
+
+
+    gap:35px;
+
+
+}
+
+
+
+
+
 
 
 
@@ -506,101 +774,174 @@ section h2 {
 
 #projects {
 
+
     padding:120px 0;
 
+
 }
+
 
 
 
 .projects-grid {
 
+
     display:grid;
+
 
     grid-template-columns:
 
+
     repeat(auto-fit,minmax(300px,1fr));
+
 
     gap:40px;
 
+
 }
+
+
 
 
 
 .project-card {
 
-    background:rgba(255,255,255,.06);
+
+    background:
+
+    rgba(255,255,255,.06);
+
 
     backdrop-filter:blur(20px);
 
+
     border-radius:25px;
+
 
     overflow:hidden;
 
+
     border:
+
 
     1px solid rgba(255,255,255,.1);
 
+
     transition:.4s;
 
+
 }
+
+
 
 
 
 .project-card:hover {
 
+
     transform:translateY(-15px);
+
 
     box-shadow:
 
+
     0 0 40px var(--blue);
 
+
 }
+
+
 
 
 
 .project-card img {
 
+
     width:100%;
+
 
     height:220px;
 
+
     object-fit:cover;
 
+
 }
+
+
 
 
 
 .project-card h3 {
 
+
     padding:20px;
+
 
     font-size:28px;
 
+
     color:var(--blue);
 
+
 }
+
+
 
 
 
 .project-card p {
 
-    padding:0 20px 20px;
+
+    padding:
+
+    0 20px 20px;
+
+
+    color:#ddd;
+
 
 }
+
+
 
 
 
 .project-card a {
 
+
     display:block;
+
 
     padding:20px;
 
+
     color:white;
+
 
     text-decoration:none;
 
+
+    transition:.3s;
+
+
 }
+
+
+
+
+.project-card a:hover {
+
+
+    color:var(--blue);
+
+
+}
+
+
+
+
+
 
 
 
@@ -611,53 +952,82 @@ section h2 {
 
 #skills {
 
+
     padding:100px 0;
 
+
 }
+
 
 
 
 .skill {
 
+
     margin-bottom:35px;
 
+
 }
+
 
 
 
 .skill-title {
 
+
     display:flex;
+
 
     justify-content:space-between;
 
+
     margin-bottom:10px;
 
+
+    font-size:18px;
+
+
 }
+
+
 
 
 
 .skill-bar {
 
+
     height:15px;
 
-    background:rgba(255,255,255,.1);
+
+    background:
+
+
+    rgba(255,255,255,.1);
+
 
     border-radius:20px;
 
+
     overflow:hidden;
+
 
 }
 
 
 
+
+
 .skill-progress {
+
 
     height:100%;
 
+
     border-radius:20px;
 
+
     background:
+
 
     linear-gradient(
 
@@ -669,13 +1039,21 @@ section h2 {
 
     );
 
+
+
     box-shadow:
+
 
     0 0 20px var(--blue);
 
-    animation:skillLoad 2s ease;
+
+    animation:
+
+    skillLoad 2s ease;
+
 
 }
+
 
 
 
@@ -686,6 +1064,7 @@ section h2 {
 }
 
 
+
 .css {
 
     width:85%;
@@ -693,11 +1072,13 @@ section h2 {
 }
 
 
+
 .js {
 
     width:70%;
 
 }
+
 
 
 .discord {
@@ -708,15 +1089,25 @@ section h2 {
 
 
 
+
+
 @keyframes skillLoad {
+
 
     from {
 
+
         width:0;
+
 
     }
 
+
 }
+
+
+
+
 
 
 
@@ -727,89 +1118,139 @@ section h2 {
 
 #profile {
 
+
     padding:100px 0;
 
+
 }
+
+
 
 
 
 .profile-card {
 
+
     max-width:500px;
+
 
     margin:auto;
 
+
     text-align:center;
+
 
     background:var(--card);
 
+
     backdrop-filter:blur(20px);
+
 
     padding:40px;
 
+
     border-radius:30px;
 
-    border:1px solid rgba(255,255,255,.1);
+
+    border:
+
+
+    1px solid rgba(255,255,255,.1);
+
 
     box-shadow:
 
+
     0 0 40px rgba(56,189,248,.2);
 
+
 }
+
+
 
 
 
 .profile-image {
 
+
     width:150px;
+
 
     height:150px;
 
+
     border-radius:50%;
+
 
     object-fit:cover;
 
-    border:4px solid var(--blue);
+
+    border:
+
+
+    4px solid var(--blue);
+
+
 
     box-shadow:
 
+
     0 0 30px var(--blue);
 
+
 }
+
+
 
 
 
 .status {
 
+
     color:#22c55e;
+
 
     margin:15px;
 
+
 }
+
+
 
 
 
 .profile-buttons {
 
+
     display:flex;
+
 
     justify-content:center;
 
+
     gap:20px;
 
+
     margin-top:30px;
+
 
 }
 
 
 
+
+
 .profile-buttons a {
+
 
     padding:12px 30px;
 
+
     border-radius:30px;
 
+
     background:
+
 
     linear-gradient(
 
@@ -821,17 +1262,61 @@ section h2 {
 
     );
 
+
+
     color:white;
+
 
     text-decoration:none;
 
+
+    transition:.3s;
+
+
 }
+
+
+
+
+
+.profile-buttons a:hover {
+
+
+    transform:scale(1.05);
+
+
+    box-shadow:
+
+
+    0 0 25px var(--blue);
+
+
+}
+
+
+
+
+
+/* Ende Teil 2 */
+
+/* =================================
+   Teil 3/3
+   GitHub • Discord • Kontakt • Mobile
+================================= */
 
 
 
 /* ================================
    Badges
 ================================ */
+
+
+#badges {
+
+    padding:80px 0;
+
+}
+
 
 
 .badges {
@@ -850,15 +1335,28 @@ section h2 {
 
 .badges div {
 
+
     padding:20px 35px;
 
-    background:rgba(255,255,255,.08);
+
+    background:
+
+    rgba(255,255,255,.08);
+
 
     border-radius:20px;
 
+
     font-size:20px;
 
+
     transition:.3s;
+
+
+    border:
+
+    1px solid rgba(255,255,255,.1);
+
 
 }
 
@@ -866,13 +1364,211 @@ section h2 {
 
 .badges div:hover {
 
+
     transform:translateY(-10px);
+
 
     box-shadow:
 
+
     0 0 30px var(--blue);
 
+
 }
+
+
+
+
+
+
+
+/* ================================
+   GitHub Statistik
+================================ */
+
+
+
+#github {
+
+
+    padding:120px 0;
+
+
+}
+
+
+
+
+
+.github-card {
+
+
+    max-width:500px;
+
+
+    margin:auto;
+
+
+    padding:40px;
+
+
+    text-align:center;
+
+
+    background:
+
+
+    rgba(255,255,255,.06);
+
+
+    backdrop-filter:blur(20px);
+
+
+    border-radius:30px;
+
+
+    border:
+
+
+    1px solid rgba(255,255,255,.1);
+
+
+    box-shadow:
+
+
+    0 0 40px rgba(56,189,248,.2);
+
+
+}
+
+
+
+
+
+.github-avatar {
+
+
+    width:120px;
+
+
+    height:120px;
+
+
+    border-radius:50%;
+
+
+    object-fit:cover;
+
+
+    border:
+
+
+    3px solid var(--blue);
+
+
+    box-shadow:
+
+
+    0 0 30px var(--blue);
+
+
+}
+
+
+
+
+
+.github-card h3 {
+
+
+    color:var(--blue);
+
+
+    font-size:30px;
+
+
+    margin:20px;
+
+
+}
+
+
+
+
+
+.github-card p {
+
+
+    font-size:18px;
+
+
+    margin:10px;
+
+
+}
+
+
+
+
+
+
+/* ================================
+   Discord Status
+================================ */
+
+
+
+#discord-status {
+
+
+    padding:100px 0;
+
+
+}
+
+
+
+.status-card {
+
+
+    max-width:400px;
+
+
+    margin:auto;
+
+
+    padding:35px;
+
+
+    background:
+
+
+    rgba(255,255,255,.06);
+
+
+    backdrop-filter:blur(20px);
+
+
+    border-radius:25px;
+
+
+    border:
+
+
+    1px solid rgba(255,255,255,.1);
+
+
+    text-align:center;
+
+
+    font-size:22px;
+
+
+}
+
+
+
+
 
 
 
@@ -881,91 +1577,230 @@ section h2 {
 ================================ */
 
 
+
 #contact {
+
 
     padding:120px 0;
 
+
 }
+
+
 
 
 
 .contact-box {
 
+
     max-width:700px;
+
 
     margin:auto;
 
+
     padding:50px;
 
-    background:var(--card);
+
+    background:
+
+
+    rgba(255,255,255,.06);
+
 
     backdrop-filter:blur(20px);
 
+
     border-radius:30px;
+
+
+    border:
+
+
+    1px solid rgba(255,255,255,.1);
+
 
     box-shadow:
 
+
     0 0 40px rgba(56,189,248,.2);
 
+
 }
+
+
 
 
 
 .contact-box input,
 
+
 .contact-box textarea {
+
 
     width:100%;
 
+
     padding:18px;
+
 
     margin:10px 0;
 
+
     background:#050816;
 
-    border:1px solid #333;
+
+    border:
+
+
+    1px solid #333;
+
 
     border-radius:15px;
 
+
     color:white;
 
+
 }
+
+
 
 
 
 .contact-box textarea {
 
+
     height:180px;
+
 
     resize:none;
 
+
 }
 
 
 
-.status-card {
 
-    max-width:400px;
 
-    margin:40px auto;
+.contact-box button {
 
-    padding:30px;
 
-    background:var(--card);
+    width:100%;
 
-    backdrop-filter:blur(20px);
 
-    border-radius:25px;
+    padding:18px;
+
+
+    border:none;
+
+
+    border-radius:30px;
+
+
+    background:
+
+
+    linear-gradient(
+
+    45deg,
+
+    var(--blue),
+
+    var(--purple)
+
+    );
+
+
+    color:white;
+
+
+    font-size:18px;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+
+
+.contact-box button:hover {
+
+
+    transform:scale(1.03);
+
+
+    box-shadow:
+
+
+    0 0 30px var(--blue);
+
+
+}
+
+
+
+
+
+
+
+/* ================================
+   Discord Widget
+================================ */
+
+
+
+#discord {
+
+
+    padding:100px 0;
+
 
     text-align:center;
 
-    font-size:22px;
 
 }
-/* =================================
-   Teil 3/3
-   Animationen • Mobile • Effekte
-================================= */
+
+
+
+#discord iframe {
+
+
+    border-radius:20px;
+
+
+    box-shadow:
+
+
+    0 0 30px rgba(56,189,248,.3);
+
+
+}
+
+
+
+
+.counter {
+
+
+    margin-top:40px;
+
+
+    font-size:20px;
+
+
+}
+
+
+
+
+
 
 
 /* ================================
@@ -973,21 +1808,213 @@ section h2 {
 ================================ */
 
 
+
 #stars {
+
 
     position:fixed;
 
+
     top:0;
+
 
     left:0;
 
+
     width:100%;
+
 
     height:100%;
 
+
     z-index:-2;
 
+
 }
+
+
+
+
+
+
+
+/* ================================
+   Loader
+================================ */
+
+
+
+.loader {
+
+
+    position:fixed;
+
+
+    top:0;
+
+
+    left:0;
+
+
+    width:100%;
+
+
+    height:100%;
+
+
+    background:#050816;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    z-index:99999;
+
+
+    transition:.5s;
+
+
+}
+
+
+
+
+
+.loader-content {
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+.loader-content h1 {
+
+
+    font-family:'JetBrains Mono',monospace;
+
+
+    font-size:50px;
+
+
+    color:var(--blue);
+
+
+    text-shadow:
+
+
+    0 0 30px var(--blue);
+
+
+    animation:pulse 2s infinite;
+
+
+}
+
+
+
+
+
+.loading-bar {
+
+
+    width:300px;
+
+
+    height:8px;
+
+
+    background:#111827;
+
+
+    margin:30px auto;
+
+
+    border-radius:20px;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+
+
+.loading-bar div {
+
+
+    height:100%;
+
+
+    width:0;
+
+
+    background:
+
+
+    linear-gradient(
+
+    90deg,
+
+    var(--blue),
+
+    var(--purple)
+
+    );
+
+
+    animation:loading 2.5s forwards;
+
+
+}
+
+
+
+
+
+@keyframes loading {
+
+
+    to {
+
+        width:100%;
+
+    }
+
+
+}
+
+
+
+
+@keyframes pulse {
+
+
+    50% {
+
+        opacity:.5;
+
+    }
+
+
+}
+
+
+
+
+
 
 
 
@@ -996,19 +2023,27 @@ section h2 {
 ================================ */
 
 
+
 body::after {
+
 
     content:"";
 
+
     position:fixed;
+
 
     width:300px;
 
+
     height:300px;
+
 
     pointer-events:none;
 
+
     background:
+
 
     radial-gradient(
 
@@ -1026,164 +2061,19 @@ body::after {
 
     left:var(--mouse-x);
 
+
     top:var(--mouse-y);
 
 
     z-index:999;
 
-}
-
-
-
-/* ================================
-   Fade Animation
-================================ */
-
-
-.fade {
-
-    opacity:0;
-
-    transform:translateY(50px);
-
-    transition:.8s;
 
 }
 
 
 
-.fade.show {
 
-    opacity:1;
 
-    transform:translateY(0);
-
-}
-
-
-
-/* ================================
-   Loader
-================================ */
-
-
-.loader {
-
-    position:fixed;
-
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    height:100%;
-
-    background:#050816;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    z-index:99999;
-
-    transition:.5s;
-
-}
-
-
-
-.loader-content {
-
-    text-align:center;
-
-}
-
-
-
-.loader-content h1 {
-
-    font-family:'JetBrains Mono',monospace;
-
-    font-size:50px;
-
-    color:var(--blue);
-
-    text-shadow:
-
-    0 0 20px var(--blue);
-
-    animation:pulse 2s infinite;
-
-}
-
-
-
-.loading-bar {
-
-    width:300px;
-
-    height:8px;
-
-    background:#111827;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    margin:30px auto;
-
-}
-
-
-
-.loading-bar div {
-
-    height:100%;
-
-    width:0%;
-
-    background:
-
-    linear-gradient(
-
-    90deg,
-
-    var(--blue),
-
-    var(--purple)
-
-    );
-
-    animation:loading 2.5s forwards;
-
-}
-
-
-
-@keyframes loading {
-
-    to {
-
-        width:100%;
-
-    }
-
-}
-
-
-
-@keyframes pulse {
-
-    50% {
-
-        opacity:.5;
-
-    }
-
-}
 
 
 
@@ -1192,11 +2082,15 @@ body::after {
 ================================ */
 
 
+
 .light {
+
 
     background:#f5f5f5;
 
+
     color:#111;
+
 
 }
 
@@ -1204,7 +2098,11 @@ body::after {
 
 .light nav {
 
-    background:rgba(255,255,255,.7);
+
+    background:
+
+    rgba(255,255,255,.8);
+
 
 }
 
@@ -1216,25 +2114,40 @@ body::after {
 
 .light .profile-card,
 
-.light .contact-box {
+.light .contact-box,
+
+.light .github-card {
+
 
     background:white;
 
+
     color:#111;
 
+
 }
+
+
 
 
 
 .light input,
 
+
 .light textarea {
 
-    background:#eeeeee;
+
+    background:#eee;
+
 
     color:#111;
 
+
 }
+
+
+
+
 
 
 
@@ -1243,9 +2156,12 @@ body::after {
 ================================ */
 
 
+
 ::-webkit-scrollbar {
 
+
     width:12px;
+
 
 }
 
@@ -1253,7 +2169,9 @@ body::after {
 
 ::-webkit-scrollbar-track {
 
+
     background:#050816;
+
 
 }
 
@@ -1261,7 +2179,9 @@ body::after {
 
 ::-webkit-scrollbar-thumb {
 
+
     background:
+
 
     linear-gradient(
 
@@ -1271,24 +2191,15 @@ body::after {
 
     );
 
+
     border-radius:20px;
 
-}
-
-
-
-/* ================================
-   Auswahl
-================================ */
-
-
-::selection {
-
-    background:var(--blue);
-
-    color:white;
 
 }
+
+
+
+
 
 
 
@@ -1297,135 +2208,165 @@ body::after {
 ================================ */
 
 
+
 .menu {
+
 
     display:none;
 
+
     font-size:32px;
+
 
     cursor:pointer;
 
+
 }
+
+
 
 
 
 @media(max-width:700px){
 
 
-    .menu {
 
-        display:block;
-
-    }
+.menu {
 
 
-
-    nav {
-
-        padding:20px;
-
-    }
-
-
-
-    nav ul {
-
-        position:absolute;
-
-        top:80px;
-
-        left:0;
-
-        width:100%;
-
-        background:#050816;
-
-        flex-direction:column;
-
-        align-items:center;
-
-        padding:30px;
-
-        display:none;
-
-    }
-
-
-
-    nav ul.active {
-
-        display:flex;
-
-    }
-
-
-
-    .hero h1 {
-
-        font-size:45px;
-
-    }
-
-
-
-    section h2 {
-
-        font-size:38px;
-
-    }
-
-
-
-    .profile-buttons {
-
-        flex-direction:column;
-
-    }
+    display:block;
 
 
 }
+
+
+
+nav {
+
+
+    padding:20px;
+
+
+}
+
+
+
+nav ul {
+
+
+    position:absolute;
+
+
+    top:80px;
+
+
+    left:0;
+
+
+    width:100%;
+
+
+    background:#050816;
+
+
+    flex-direction:column;
+
+
+    align-items:center;
+
+
+    padding:30px;
+
+
+    display:none;
+
+
+}
+
+
+
+nav ul.active {
+
+
+    display:flex;
+
+
+}
+
+
+
+.hero h1 {
+
+
+    font-size:45px;
+
+
+}
+
+
+
+section h2 {
+
+
+    font-size:38px;
+
+
+}
+
+
+
+.profile-buttons {
+
+
+    flex-direction:column;
+
+
+}
+
+
+
+}
+
+
 
 
 
 @media(max-width:500px){
 
 
-    .hero button {
 
-        padding:15px 35px;
-
-    }
+.loader-content h1 {
 
 
-
-    .glass-card,
-
-    .about-card,
-
-    .contact-box {
-
-        padding:30px;
-
-    }
-
-
-
-    .loader-content h1 {
-
-        font-size:35px;
-
-    }
-
-
-
-    .loading-bar {
-
-        width:220px;
-
-    }
+    font-size:35px;
 
 
 }
+
+
+
+.loading-bar {
+
+
+    width:220px;
+
+
+}
+
+
+
+.contact-box {
+
+
+    padding:30px;
+
+
+}
+
+
+
+}
+
 
 
 
@@ -1434,54 +2375,58 @@ body::after {
 ================================ */
 
 
+
 button,
 a,
 .glass-card {
 
+
     cursor:pointer;
 
+
 }
+
+
+
+
 
 
 
 /* ================================
-   Floating Effekt
+   Floating Animation
 ================================ */
+
 
 
 .float {
 
+
     animation:floating 4s infinite ease-in-out;
 
+
 }
+
+
 
 
 
 @keyframes floating {
 
 
-    0% {
-
-        transform:translateY(0);
-
-    }
-
-
     50% {
+
 
         transform:translateY(-20px);
 
-    }
-
-
-    100% {
-
-        transform:translateY(0);
 
     }
 
 
 }
+
+
+
+
 
 
 
@@ -1490,92 +2435,51 @@ a,
 ================================ */
 
 
+
 .neon {
+
 
     animation:neonGlow 2s infinite alternate;
 
+
 }
+
+
 
 
 
 @keyframes neonGlow {
 
 
-    from {
 
-        text-shadow:
-
-        0 0 10px var(--blue);
-
-    }
+from {
 
 
+    text-shadow:
 
-    to {
 
-        text-shadow:
-
-        0 0 40px var(--blue),
-
-        0 0 80px var(--purple);
-
-    }
+    0 0 10px var(--blue);
 
 
 }
 
-.github-card{
 
-background:rgba(255,255,255,.06);
 
-backdrop-filter:blur(20px);
 
-padding:40px;
+to {
 
-border-radius:30px;
 
-text-align:center;
+    text-shadow:
 
-border:1px solid rgba(255,255,255,.1);
 
-box-shadow:
-0 0 30px rgba(56,189,248,.2);
+    0 0 40px var(--blue),
+
+
+    0 0 80px var(--purple);
+
 
 }
 
 
-.github-avatar{
-
-width:120px;
-
-height:120px;
-
-border-radius:50%;
-
-border:3px solid var(--blue);
-
-box-shadow:
-
-0 0 25px var(--blue);
-
-}
-
-
-.github-card h3{
-
-font-size:30px;
-
-color:var(--blue);
-
-margin:20px;
-
-}
-
-
-.github-card p{
-
-font-size:18px;
-
-margin:10px;
 
 }

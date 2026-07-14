@@ -13,20 +13,36 @@
 
 <!-- SEO -->
 
-<meta name="description" content="JustinByte.exe - Developer Portfolio. Webseiten, Discord Projekte, Minecraft und Technik.">
+<meta name="description" content="JustinByte.exe - Developer Portfolio. Webseiten, Discord Projekte, Minecraft, Linux und Technik.">
 
-<meta name="keywords" content="JustinByte, Developer, Webentwicklung, Discord, Minecraft, Portfolio">
+<meta name="keywords" content="JustinByte, Developer, Webentwicklung, Discord Bots, Minecraft, Portfolio">
 
 <meta name="author" content="Justin">
 
 
-<!-- Open Graph -->
+<meta name="robots" content="index, follow">
+
+
+<!-- Später eigene Domain eintragen -->
+
+<link rel="canonical" href="https://DEINE-DOMAIN.de">
+
+
+
+<!-- Open Graph (Discord, WhatsApp, Social Media) -->
 
 <meta property="og:title" content="JustinByte.exe">
 
-<meta property="og:description" content="Developer Portfolio von Justin">
+<meta property="og:description" content="Developer Portfolio von Justin - Webseiten, Discord Projekte und Technik">
 
 <meta property="og:type" content="website">
+
+<meta property="og:image" content="https://DEINE-DOMAIN.de/assets/img/preview.png">
+
+<meta property="og:url" content="https://DEINE-DOMAIN.de">
+
+
+<meta name="twitter:card" content="summary_large_image">
 
 
 
@@ -39,11 +55,22 @@
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 
+
+<!-- CSS -->
+
 <link rel="stylesheet" href="style.css">
 
 
-<link rel="icon" href="assets/img/favicon.png">
 
+<!-- Favicon -->
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png">
+
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+
+
+<!-- JavaScript -->
 
 <script defer src="script.js"></script>
 
@@ -51,16 +78,17 @@
 </head>
 
 
+
 <body>
 
 
-<!-- Sterne -->
+<!-- Sterne Hintergrund -->
 
 <canvas id="stars"></canvas>
 
 
 
-<!-- Loader -->
+<!-- Loading Animation -->
 
 
 <div class="loader">
@@ -74,6 +102,7 @@ JustinByte.exe
 </h1>
 
 
+
 <div class="loading-bar">
 
 <div></div>
@@ -81,21 +110,23 @@ JustinByte.exe
 </div>
 
 
+
 <p>
 Loading Portfolio...
 </p>
 
 
-</div>
-
 
 </div>
 
 
+</div>
 
 
-<!-- Hintergrund -->
 
+
+
+<!-- Animierter Hintergrund -->
 
 <div class="background"></div>
 
@@ -109,11 +140,13 @@ Loading Portfolio...
 <nav>
 
 
+
 <div class="logo">
 
 JustinByte.exe
 
 </div>
+
 
 
 
@@ -126,42 +159,68 @@ JustinByte.exe
 
 
 
+
 <ul id="nav-links">
 
 
 <li>
+
 <a href="#">
+
 Home
+
 </a>
+
 </li>
 
 
+
 <li>
+
 <a href="#profile">
+
 Profil
+
 </a>
+
 </li>
 
 
+
 <li>
+
 <a href="#about">
+
 Über mich
+
 </a>
+
 </li>
 
 
+
 <li>
+
 <a href="#projects">
+
 Projekte
+
 </a>
+
 </li>
+
 
 
 <li>
+
 <a href="#contact">
+
 Kontakt
+
 </a>
+
 </li>
+
 
 
 <li>
@@ -175,6 +234,7 @@ Kontakt
 </li>
 
 
+
 </ul>
 
 
@@ -185,10 +245,13 @@ Kontakt
 
 
 
-<!-- Hero -->
+
+
+<!-- Hero Bereich -->
 
 
 <section class="hero">
+
 
 
 <h1>
@@ -210,6 +273,7 @@ Justin
 
 
 
+
 <p>
 
 Schüler • Developer • Discord Administrator
@@ -219,7 +283,7 @@ Schüler • Developer • Discord Administrator
 
 
 
-<button>
+<button onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
 
 Projekte ansehen
 
@@ -227,14 +291,10 @@ Projekte ansehen
 
 
 
+
 </section>
 
-
-
-
-
 <!-- Profil -->
-
 
 <section id="profile">
 
@@ -246,7 +306,10 @@ Projekte ansehen
 <div class="profile-card">
 
 
-<img src="assets/img/profil.png" class="profile-image">
+<img 
+src="assets/img/profil.png"
+alt="Profilbild von Justin"
+class="profile-image">
 
 
 
@@ -309,6 +372,7 @@ Discord
 
 
 
+
 <!-- Über mich -->
 
 
@@ -352,7 +416,9 @@ Ich entwickle moderne Webseiten, Discord-Projekte und Community-Systeme.
 
 Meine Interessen:
 
-<br>
+
+<br><br>
+
 
 💻 Webentwicklung
 
@@ -384,9 +450,13 @@ Meine Interessen:
 
 </section>
 
-    <!-- ==========================
-     Auszeichnungen
-========================== -->
+
+
+
+
+
+
+<!-- Auszeichnungen -->
 
 
 <section id="badges">
@@ -407,22 +477,33 @@ Auszeichnungen
 
 
 <div>
+
 🏆 Discord Manager
+
 </div>
 
 
+
 <div>
+
 💻 Developer
+
 </div>
 
 
+
 <div>
+
 🚒 Feuerwehr Fan
+
 </div>
 
 
+
 <div>
+
 🎮 Gamer
+
 </div>
 
 
@@ -439,9 +520,9 @@ Auszeichnungen
 
 
 
-<!-- ==========================
-     Karten
-========================== -->
+
+
+<!-- Karten -->
 
 
 <section id="cards">
@@ -450,16 +531,21 @@ Auszeichnungen
 <div class="container">
 
 
+
 <div class="glass-card">
 
 
 <h3>
+
 💻 Developer
+
 </h3>
 
 
 <p>
+
 HTML, CSS, JavaScript und moderne Webseiten.
+
 </p>
 
 
@@ -472,12 +558,16 @@ HTML, CSS, JavaScript und moderne Webseiten.
 
 
 <h3>
+
 🤖 Discord
+
 </h3>
 
 
 <p>
+
 Server-Management, Bots, Ticketsysteme und Community-Aufbau.
+
 </p>
 
 
@@ -486,20 +576,26 @@ Server-Management, Bots, Ticketsysteme und Community-Aufbau.
 
 
 
+
 <div class="glass-card">
 
 
 <h3>
+
 🎮 Minecraft
+
 </h3>
 
 
 <p>
+
 Server, Mods, Ressourcenpakete und Gaming-Projekte.
+
 </p>
 
 
 </div>
+
 
 
 
@@ -508,16 +604,21 @@ Server, Mods, Ressourcenpakete und Gaming-Projekte.
 
 
 <h3>
+
 🚒 Feuerwehr
+
 </h3>
 
 
 <p>
+
 Technik, Fahrzeuge und Interesse an Feuerwehr.
+
 </p>
 
 
 </div>
+
 
 
 
@@ -530,15 +631,16 @@ Technik, Fahrzeuge und Interesse an Feuerwehr.
 
 
 
-<!-- ==========================
-     Projekte
-========================== -->
+
+
+<!-- Projekte -->
 
 
 <section id="projects">
 
 
 <div class="container">
+
 
 
 <h2>
@@ -549,14 +651,20 @@ Meine Projekte
 
 
 
+
 <div class="projects-grid">
+
+
 
 
 
 <div class="project-card">
 
 
-<img src="assets/img/discord.jpg" alt="Discord Projekt">
+<img 
+src="assets/img/discord.jpg"
+alt="Discord Projekte">
+
 
 
 <h3>
@@ -566,11 +674,13 @@ Discord Projekte
 </h3>
 
 
+
 <p>
 
 Discord Server, Bots, Ticketsysteme und Community-Systeme.
 
 </p>
+
 
 
 <a href="#">
@@ -580,7 +690,11 @@ Mehr erfahren
 </a>
 
 
+
 </div>
+
+
+
 
 
 
@@ -589,7 +703,10 @@ Mehr erfahren
 <div class="project-card">
 
 
-<img src="assets/img/minecraft.jpg" alt="Minecraft Projekt">
+<img 
+src="assets/img/minecraft.jpg"
+alt="Minecraft Projekte">
+
 
 
 <h3>
@@ -599,11 +716,13 @@ Minecraft Projekte
 </h3>
 
 
+
 <p>
 
 Minecraft Server, Mods, Ressourcenpakete und Communities.
 
 </p>
+
 
 
 <a href="#">
@@ -613,7 +732,11 @@ Mehr erfahren
 </a>
 
 
+
 </div>
+
+
+
 
 
 
@@ -622,7 +745,10 @@ Mehr erfahren
 <div class="project-card">
 
 
-<img src="assets/img/web.jpg" alt="Webentwicklung">
+<img 
+src="assets/img/web.jpg"
+alt="Webentwicklung Projekte">
+
 
 
 <h3>
@@ -632,11 +758,13 @@ Webentwicklung
 </h3>
 
 
+
 <p>
 
 Moderne Webseiten mit HTML, CSS und JavaScript.
 
 </p>
+
 
 
 <a href="#">
@@ -646,7 +774,9 @@ Mehr erfahren
 </a>
 
 
+
 </div>
+
 
 
 
@@ -662,9 +792,10 @@ Mehr erfahren
 
 
 
-<!-- ==========================
-     GitHub Projekte
-========================== -->
+
+
+
+<!-- GitHub Projekte -->
 
 
 <section id="github-projects">
@@ -680,12 +811,13 @@ GitHub Projekte
 </h2>
 
 
-<div id="repos">
 
+<div id="repos">
 
 Lade Projekte...
 
 </div>
+
 
 
 </div>
@@ -697,9 +829,10 @@ Lade Projekte...
 
 
 
-<!-- ==========================
-     GitHub Statistik
-========================== -->
+
+
+
+<!-- GitHub Statistik -->
 
 
 <section id="github">
@@ -710,18 +843,27 @@ Lade Projekte...
 
 <h2>
 
-GitHub
+GitHub Statistik
 
 </h2>
+
+
 
 
 <div class="github-card" id="github-card">
 
 
-Lade GitHub Daten...
+
+<img
+
+src="https://github-readme-stats.vercel.app/api?username=justin-dev828&show_icons=true&theme=tokyonight&hide_border=true"
+
+alt="GitHub Statistik von JustinByte.exe">
+
 
 
 </div>
+
 
 
 </div>
@@ -729,14 +871,7 @@ Lade GitHub Daten...
 
 </section>
 
-
-
-
-
-<!-- ==========================
-     Skills
-========================== -->
-
+<!-- Skills -->
 
 <section id="skills">
 
@@ -764,6 +899,7 @@ Meine Skills
 </div>
 
 
+
 <div class="skill-bar">
 
 <div class="skill-progress html"></div>
@@ -771,7 +907,10 @@ Meine Skills
 </div>
 
 
+
 </div>
+
+
 
 
 
@@ -788,6 +927,7 @@ Meine Skills
 </div>
 
 
+
 <div class="skill-bar">
 
 <div class="skill-progress css"></div>
@@ -795,7 +935,10 @@ Meine Skills
 </div>
 
 
+
 </div>
+
+
 
 
 
@@ -812,6 +955,7 @@ Meine Skills
 </div>
 
 
+
 <div class="skill-bar">
 
 <div class="skill-progress js"></div>
@@ -819,7 +963,10 @@ Meine Skills
 </div>
 
 
+
 </div>
+
+
 
 
 
@@ -836,6 +983,7 @@ Meine Skills
 </div>
 
 
+
 <div class="skill-bar">
 
 <div class="skill-progress discord"></div>
@@ -843,7 +991,9 @@ Meine Skills
 </div>
 
 
+
 </div>
+
 
 
 
@@ -856,9 +1006,9 @@ Meine Skills
 
 
 
-<!-- ==========================
-     Discord Status
-========================== -->
+
+
+<!-- Discord Status -->
 
 
 <section id="discord-status">
@@ -875,6 +1025,7 @@ Discord Status
 
 
 
+
 <div class="status-card">
 
 
@@ -885,7 +1036,9 @@ Lade Status...
 </p>
 
 
+
 </div>
+
 
 
 </div>
@@ -897,9 +1050,10 @@ Lade Status...
 
 
 
-<!-- ==========================
-     Kontakt
-========================== -->
+
+
+
+<!-- Kontakt -->
 
 
 <section id="contact">
@@ -928,7 +1082,10 @@ Schreib mir eine Nachricht
 
 
 
+
+
 <form action="https://formsubmit.co/justin.cf879@gmail.com" method="POST">
+
 
 
 <input
@@ -940,6 +1097,8 @@ name="name"
 placeholder="Dein Name"
 
 required>
+
+
 
 
 <input
@@ -954,6 +1113,8 @@ required>
 
 
 
+
+
 <textarea
 
 name="message"
@@ -964,7 +1125,19 @@ required></textarea>
 
 
 
-<button>
+
+
+<input type="hidden" name="_captcha" value="false">
+
+
+<input type="hidden" name="_subject" value="Neue Nachricht von JustinByte Portfolio">
+
+
+
+
+
+
+<button type="submit">
 
 Nachricht senden
 
@@ -972,10 +1145,16 @@ Nachricht senden
 
 
 
+
+
 </form>
 
 
+
+
 </div>
+
+
 
 
 </div>
@@ -987,9 +1166,10 @@ Nachricht senden
 
 
 
-<!-- ==========================
-     Discord Widget
-========================== -->
+
+
+
+<!-- Discord Community -->
 
 
 <section id="discord">
@@ -1006,6 +1186,8 @@ Discord Community
 
 
 
+
+
 <iframe
 
 src="https://discord.com/widget?id=1516100446807396533&theme=dark"
@@ -1016,9 +1198,14 @@ height="500"
 
 allowtransparency="true"
 
-frameborder="0">
+frameborder="0"
+
+sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+
 
 </iframe>
+
+
 
 
 
@@ -1028,11 +1215,17 @@ frameborder="0">
 Besucher:
 
 
-<img src="https://visitor-badge.laobi.icu/badge?page_id=JustinByte"
+<img
+
+src="https://visitor-badge.laobi.icu/badge?page_id=JustinByte"
+
 alt="Besucherzähler">
 
 
+
 </div>
+
+
 
 
 
@@ -1040,6 +1233,43 @@ alt="Besucherzähler">
 
 
 </section>
+
+
+
+
+
+
+
+
+<!-- Footer -->
+
+
+<footer>
+
+
+<div class="container">
+
+
+<p>
+
+© 2026 JustinByte.exe | Alle Rechte vorbehalten.
+
+</p>
+
+
+
+<p>
+
+Developer Portfolio von Justin
+
+</p>
+
+
+
+</div>
+
+
+</footer>
 
 
 
