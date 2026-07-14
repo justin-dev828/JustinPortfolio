@@ -208,23 +208,6 @@ Abmelden
 <script>
 
 
-async function checkLogin(){
-
-
-const response = await fetch("/api/me");
-
-
-if(!response.ok){
-
-window.location.href="/login.html";
-
-}
-
-
-}
-
-
-
 async function logout(){
 
 
@@ -235,10 +218,6 @@ window.location.href="/login.html";
 
 
 }
-
-
-
-checkLogin();
 
 
 </script>
