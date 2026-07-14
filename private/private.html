@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>JustinByte.exe | Private Biography</title>
+<title>JustinByte.exe | Private Bio</title>
 
 <link rel="stylesheet" href="../style.css">
 
@@ -16,350 +16,271 @@
 <style>
 
 
-.private-page {
+body{
 
-    min-height:100vh;
-    padding:120px 20px;
-
-}
-
-
-/* Container */
-
-.bio-container {
-
-    max-width:1100px;
-    margin:auto;
+background:#050816;
 
 }
 
 
 
-/* Hero */
+.private-page{
 
-.bio-hero {
+min-height:100vh;
 
-    text-align:center;
-    margin-bottom:80px;
-
-}
-
-
-.bio-hero h1 {
-
-
-    font-family:'JetBrains Mono',monospace;
-
-    font-size:70px;
-
-    color:white;
-
-    text-shadow:
-
-    0 0 20px #38bdf8;
-
-
-}
-
-
-.bio-hero h1 span {
-
-
-    color:#38bdf8;
-
+padding:100px 20px;
 
 }
 
 
 
-.bio-hero p {
+.bio-container{
 
+max-width:1100px;
 
-    color:#94a3b8;
-
-    font-size:22px;
-
-    margin-top:20px;
-
+margin:auto;
 
 }
 
 
 
-/* Profil Banner */
+/* Header */
 
 
-.profile-banner {
+.bio-header{
 
+text-align:center;
 
-    margin-bottom:60px;
-
-
-    padding:40px;
-
-
-    background:
-
-    rgba(255,255,255,.06);
-
-
-    backdrop-filter:blur(20px);
-
-
-    border-radius:35px;
-
-
-    border:
-
-    1px solid rgba(255,255,255,.15);
-
-
-    display:flex;
-
-    align-items:center;
-
-    gap:35px;
-
+margin-bottom:70px;
 
 }
 
 
 
-.avatar {
+.bio-header h1{
+
+font-family:'JetBrains Mono',monospace;
+
+font-size:65px;
+
+color:white;
+
+text-shadow:
+
+0 0 20px #38bdf8,
+0 0 50px #38bdf8;
+
+}
 
 
-    width:130px;
 
-    height:130px;
+.bio-header h1 span{
 
-    border-radius:50%;
+color:#38bdf8;
 
-
-    border:
-
-    4px solid #38bdf8;
+}
 
 
-    box-shadow:
 
-    0 0 35px #38bdf8;
+.bio-header p{
+
+font-size:22px;
+
+color:#94a3b8;
+
+margin-top:20px;
+
+}
 
 
-    object-fit:cover;
+
+/* Karten */
+
+
+.bio-section{
+
+
+background:
+
+rgba(255,255,255,.06);
+
+
+backdrop-filter:blur(20px);
+
+
+border:
+
+1px solid rgba(255,255,255,.12);
+
+
+border-radius:30px;
+
+
+padding:40px;
+
+
+margin-bottom:35px;
+
+
+transition:.3s;
 
 
 }
 
 
 
-.profile-banner h2 {
+.bio-section:hover{
 
 
-    color:white;
-
-    font-size:35px;
+transform:translateY(-8px);
 
 
-}
+box-shadow:
 
-
-.profile-banner p {
-
-
-    color:#94a3b8;
-
-    font-size:18px;
+0 0 35px rgba(56,189,248,.25);
 
 
 }
 
 
 
-/* Sections */
+.bio-section h2{
 
 
-.bio-section {
+color:#38bdf8;
 
 
-    margin-bottom:35px;
+font-size:32px;
 
 
-    padding:35px;
-
-
-    background:
-
-    rgba(255,255,255,.05);
-
-
-    backdrop-filter:blur(18px);
-
-
-    border-radius:25px;
-
-
-    border:
-
-    1px solid rgba(255,255,255,.1);
-
-
-    transition:.3s;
+margin-bottom:25px;
 
 
 }
 
 
 
-.bio-section:hover {
+.bio-section p{
 
 
-    transform:translateY(-8px);
+color:#e5e7eb;
 
 
-    box-shadow:
-
-    0 0 35px rgba(56,189,248,.25);
+font-size:18px;
 
 
-}
-
-
-
-.bio-section h2 {
-
-
-    color:#38bdf8;
-
-
-    font-size:32px;
-
-    margin-bottom:20px;
+line-height:1.9;
 
 
 }
 
 
 
-.bio-section p {
+.bio-section strong{
 
 
-    color:#e5e7eb;
-
-
-    font-size:18px;
-
-    line-height:1.8;
+color:#38bdf8;
 
 
 }
+
 
 
 /* Listen */
 
 
-.tags {
+.bio-list{
 
 
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:15px;
-
-    margin-top:25px;
+display:flex;
 
 
-}
+flex-wrap:wrap;
 
 
-
-.tags span {
-
-
-    padding:12px 22px;
+gap:15px;
 
 
-    border-radius:30px;
-
-
-    background:
-
-    rgba(56,189,248,.12);
-
-
-    border:
-
-    1px solid rgba(56,189,248,.3);
-
-
-    color:white;
-
-
-    transition:.3s;
+margin-top:25px;
 
 
 }
 
 
 
-.tags span:hover {
+.bio-list span{
 
 
-    background:#38bdf8;
+padding:12px 25px;
 
 
-    color:#050816;
+border-radius:30px;
 
+
+background:
+
+rgba(56,189,248,.12);
+
+
+border:
+
+1px solid rgba(56,189,248,.3);
+
+
+color:white;
+
+
+}
+
+
+
+/* Schutz */
+
+
+#private-content{
+
+display:none;
 
 }
 
 
 
-/* Quote */
+/* Mobile */
 
 
-.quote {
+@media(max-width:700px){
 
 
-    padding:40px;
+.bio-header h1{
 
-
-    margin-top:25px;
-
-
-    text-align:center;
-
-
-    border-radius:25px;
-
-
-    background:
-
-    linear-gradient(
-
-    135deg,
-
-    rgba(56,189,248,.2),
-
-    rgba(139,92,246,.2)
-
-    );
-
-
-    font-size:25px;
-
-    color:white;
-
-
-    font-style:italic;
-
+font-size:40px;
 
 }
 
+
+
+.bio-section{
+
+padding:25px;
+
+}
+
+
+
+.bio-section h2{
+
+font-size:26px;
+
+}
+
+
+
+}
 
 
 
 </style>
+
 
 </head>
 
@@ -371,19 +292,32 @@
 
 <script>
 
-
 fetch("/api/me")
 
 .then(res=>{
 
 
-if(!res.ok){
+if(res.ok){
+
+
+document.getElementById("private-content").style.display="block";
+
+
+}else{
 
 
 window.location.href="/#private-bio";
 
 
 }
+
+
+})
+
+.catch(()=>{
+
+
+window.location.href="/#private-bio";
 
 
 });
@@ -393,13 +327,22 @@ window.location.href="/#private-bio";
 
 
 
+
+
+<div id="private-content">
+
+
+
 <div class="private-page">
 
 
 <div class="bio-container">
 
 
-<div class="bio-hero">
+
+
+
+<div class="bio-header">
 
 
 <h1>
@@ -411,7 +354,7 @@ Justin<span>.exe</span>
 
 <p>
 
-Private Developer Biography
+🔒 Private Developer Biography
 
 </p>
 
@@ -420,114 +363,211 @@ Private Developer Biography
 
 
 
-<div class="profile-banner">
 
 
-<img src="../assets/img/profil.png" class="avatar">
 
 
-<div>
+<!-- Über mich -->
+
+
+<section class="bio-section">
 
 
 <h2>
 
-Justin
+👨‍💻 Über mich
 
 </h2>
 
 
-<p>
-
-Schüler • Developer • Discord Administrator • Technik-Enthusiast
-
-</p>
-
-
-</div>
-
-
-</div>
-    <!-- Discord & Community Management -->
-
-<section class="bio-section">
-
-<div class="section-icon">
-🤖
-</div>
-
-<h2>Discord und Community-Management</h2>
-
 
 <p>
 
-Ich habe bereits an mehreren Discord-Servern gearbeitet und viel Zeit in deren Aufbau investiert.
-Dabei habe ich verschiedene Aufgaben übernommen und gelernt, wie wichtig eine gute Organisation und Kommunikation in einer Community sind.
 
-</p>
+Mein Name ist <strong>Justin</strong>. Ich bin ein technikbegeisterter Schüler, der sich in seiner Freizeit intensiv mit Computern, Servern und Software beschäftigt.
 
 
-<div class="feature-grid">
+<br><br>
 
 
-<div class="feature-box">
+Neue Dinge zu lernen und Herausforderungen zu lösen gehören für mich dazu. Besonders interessieren mich IT, Programmierung, Netzwerke und alles, was mit der Entwicklung eigener Projekte zu tun hat.
 
-<h3>🛠 Serveraufbau</h3>
-
-<p>
-Erstellen von Serverstrukturen, Kategorien, Rollen und Berechtigungssystemen.
-</p>
-
-</div>
-
-
-
-<div class="feature-box">
-
-<h3>📜 Regelwerke</h3>
-
-<p>
-Schreiben von klaren Regeln und Richtlinien für Communities.
-</p>
-
-</div>
-
-
-
-<div class="feature-box">
-
-<h3>📢 Organisation</h3>
-
-<p>
-Erstellen von Ankündigungen, Bewerbungen und Community-Inhalten.
-</p>
-
-</div>
-
-
-
-<div class="feature-box">
-
-<h3>🤝 Partnerschaften</h3>
-
-<p>
-Bearbeiten von Partnerschaften und Zusammenarbeit mit anderen Communities.
-</p>
-
-</div>
-
-
-</div>
-
-
-<p>
-
-Mir ist wichtig, dass eine Community freundlich, respektvoll und gut organisiert ist.
-Eine gute Atmosphäre entsteht durch Zusammenarbeit und gegenseitige Unterstützung.
 
 </p>
 
 
 </section>
+
+
+
+
+
+
+
+<!-- Interessen -->
+
+
+<section class="bio-section">
+
+
+<h2>
+
+🚀 Meine Interessen
+
+</h2>
+
+
+
+<p>
+
+
+Ein großer Teil meiner Freizeit dreht sich um Technik.
+
+
+<br><br>
+
+
+Ich beschäftige mich mit Windows und Linux, probiere virtuelle Maschinen aus und lerne, wie verschiedene Systeme funktionieren.
+
+
+<br><br>
+
+
+Außerdem entwickle ich gerne Discord-Server und arbeite an Bots, Webseiten und anderen Projekten.
+
+
+<br><br>
+
+
+Neben der Technik spiele ich gerne Videospiele. Besonders interessieren mich:
+
+
+</p>
+
+
+
+<div class="bio-list">
+
+
+<span>🎮 Minecraft</span>
+
+<span>🚗 FiveM</span>
+
+<span>🏎️ GTA Online</span>
+
+<span>🧱 Roblox</span>
+
+
+</div>
+
+
+
+<p>
+
+
+Dabei macht mir nicht nur das Spielen Spaß, sondern auch das Organisieren von Communities, das Erstellen von Regelwerken und das Entwickeln neuer Ideen für Roleplay-Server.
+
+
+</p>
+
+
+</section>
+<!-- Discord & Community Management -->
+
+
+<section class="bio-section">
+
+
+<h2>
+
+🤖 Discord und Community-Management
+
+</h2>
+
+
+
+<p>
+
+
+Ich habe bereits an mehreren Discord-Servern gearbeitet und viel Zeit in deren Aufbau investiert.
+
+
+<br><br>
+
+
+Dazu gehören:
+
+
+</p>
+
+
+
+<div class="bio-list">
+
+
+<span>🛠 Serverstrukturen</span>
+
+<span>📜 Regelwerke</span>
+
+<span>📢 Ankündigungen</span>
+
+<span>🤝 Partnerschaften</span>
+
+<span>📝 Bewerbungen</span>
+
+<span>👥 Community Support</span>
+
+
+</div>
+
+
+
+<p>
+
+
+Ich beschäftige mich mit:
+
+
+<br><br>
+
+
+• Erstellen von Serverstrukturen
+
+<br>
+
+• Schreiben von Regelwerken
+
+<br>
+
+• Verfassen von Ankündigungen
+
+<br>
+
+• Bearbeiten von Partnerschaften
+
+<br>
+
+• Entwickeln von Bewerbungsformularen
+
+<br>
+
+• Unterstützung beim Community-Management
+
+
+<br><br>
+
+
+Mir ist wichtig, dass eine Community freundlich, respektvoll und gut organisiert ist.
+
+
+</p>
+
+
+</section>
+
+
+
+
 
 
 
@@ -539,54 +579,54 @@ Eine gute Atmosphäre entsteht durch Zusammenarbeit und gegenseitige Unterstütz
 <section class="bio-section">
 
 
-<div class="section-icon">
-🚒
-</div>
+<h2>
 
+🚒 Feuerwehr
 
-<h2>Feuerwehr</h2>
+</h2>
+
 
 
 <p>
+
 
 Ein besonderes Interesse von mir gilt der Feuerwehr.
 
+
 <br><br>
 
+
 Dieses Interesse spiegelt sich auch in meinen Roleplay-Projekten wider.
-Ich beschäftige mich gerne mit Feuerwehrfahrzeugen, Einsätzen und Organisationsstrukturen.
+
+
+<br><br>
+
+
+Ich beschäftige mich gerne mit Feuerwehrfahrzeugen, Einsätzen und Organisationsstrukturen und bringe dieses Wissen in meine Projekte ein.
+
 
 </p>
 
 
-<div class="info-card">
+
+<div class="bio-list">
 
 
-<h3>
-🚨 Feuerwehr & Technik
-</h3>
+<span>🚒 Fahrzeuge</span>
 
+<span>🚨 Einsätze</span>
 
-<p>
+<span>📋 Organisation</span>
 
-Ich finde besonders spannend, wie Einsatzorganisationen funktionieren,
-wie Fahrzeuge aufgebaut sind und wie Teams im Ernstfall zusammenarbeiten.
-
-</p>
+<span>🎮 Roleplay</span>
 
 
 </div>
 
 
-<p>
-
-Dieses Wissen bringe ich gerne in meine Projekte ein und verbinde damit Technik,
-Organisation und Kreativität.
-
-</p>
-
-
 </section>
+
+
 
 
 
@@ -600,54 +640,46 @@ Organisation und Kreativität.
 <section class="bio-section">
 
 
-<div class="section-icon">
-🎨
-</div>
+<h2>
 
+🎨 Kreativität
 
-<h2>Kreativität</h2>
+</h2>
 
-
-<p>
-
-Neben Programmierung und Technik arbeite ich gerne an Designs für Banner,
-Logos und Profilbilder.
-
-</p>
 
 
 <p>
+
+
+Ich arbeite gerne an Designs für Banner, Logos und Profilbilder.
+
+
+<br><br>
+
 
 Moderne Neon-Effekte, technische Designs und futuristische Elemente gefallen mir besonders.
+
+
+<br><br>
+
+
 Ich finde es spannend, Technik und Kreativität miteinander zu verbinden.
 
+
 </p>
 
 
-<div class="feature-grid">
+
+<div class="bio-list">
 
 
-<div class="feature-box">
+<span>🌌 Neon Designs</span>
 
-<h3>🌌 Design</h3>
+<span>🎨 Grafiken</span>
 
-<p>
-Erstellen von modernen Designs und visuellen Konzepten.
-</p>
+<span>💡 Konzepte</span>
 
-</div>
-
-
-
-<div class="feature-box">
-
-<h3>💡 Ideen</h3>
-
-<p>
-Entwickeln neuer Konzepte für Projekte und Communities.
-</p>
-
-</div>
+<span>🖥 UI Ideen</span>
 
 
 </div>
@@ -661,28 +693,33 @@ Entwickeln neuer Konzepte für Projekte und Communities.
 
 
 
+
+
 <!-- Eigenschaften -->
 
 
 <section class="bio-section">
 
 
-<div class="section-icon">
-⭐
-</div>
+<h2>
 
+⭐ Eigenschaften
 
-<h2>Eigenschaften</h2>
+</h2>
+
 
 
 <p>
 
+
 Menschen würden mich vermutlich so beschreiben:
+
 
 </p>
 
 
-<div class="tags">
+
+<div class="bio-list">
 
 
 <span>Neugierig</span>
@@ -709,102 +746,104 @@ Menschen würden mich vermutlich so beschreiben:
 </div>
 
 
+
 <p>
 
-Wenn mich ein Thema interessiert, beschäftige ich mich oft sehr intensiv damit
-und versuche, immer mehr darüber zu lernen.
+
+Wenn mich ein Thema interessiert, beschäftige ich mich oft sehr intensiv damit und versuche, immer mehr darüber zu lernen.
+
 
 </p>
 
 
 </section>
 
-    <!-- Herausforderungen -->
+
+
+
+
+
+
+
+<!-- Herausforderungen -->
+
 
 <section class="bio-section">
 
 
-<div class="section-icon">
-⚙️
-</div>
+<h2>
 
+⚙️ Herausforderungen
 
-<h2>Herausforderungen</h2>
+</h2>
+
 
 
 <p>
+
 
 Nicht alles läuft immer problemlos.
 
+
 <br><br>
 
-Gerade bei technischen Projekten gibt es Rückschläge oder Fehler,
-die Zeit kosten. Trotzdem gebe ich nicht sofort auf, sondern suche nach Lösungen
-und probiere verschiedene Wege aus.
 
-</p>
+Gerade bei technischen Projekten gibt es Rückschläge oder Fehler, die Zeit kosten.
 
 
-<div class="info-card">
+<br><br>
 
 
-<h3>
-💡 Probleme lösen
-</h3>
+Trotzdem gebe ich meistens nicht sofort auf, sondern suche nach Lösungen und probiere verschiedene Wege aus.
 
 
-<p>
-
-Fehler gehören für mich zum Lernen dazu.
-Jede Herausforderung hilft dabei, neue Erfahrungen zu sammeln
-und besser zu werden.
-
-</p>
+<br><br>
 
 
-</div>
+Wie viele Jugendliche habe ich auch persönliche Herausforderungen erlebt.
 
 
-<p>
+<br><br>
 
-Diese Erfahrungen haben mich geprägt und mir gezeigt,
-wie wichtig Vertrauen, Unterstützung und Menschen sind,
-auf die man sich verlassen kann.
+
+Diese Erfahrungen haben mich geprägt und mir gezeigt, wie wichtig Vertrauen, Unterstützung und Menschen sind, auf die man sich verlassen kann.
+
 
 </p>
 
 
 </section>
-
-
-
-
-
-
-<!-- Ziele -->
+<!-- Meine Ziele -->
 
 
 <section class="bio-section">
 
 
-<div class="section-icon">
-🚀
-</div>
+<h2>
 
+🚀 Meine Ziele
 
-<h2>Meine Ziele</h2>
+</h2>
+
 
 
 <p>
 
-Ich möchte meine Kenntnisse im IT-Bereich kontinuierlich erweitern
-und immer neue Technologien kennenlernen.
+
+Ich möchte meine Kenntnisse im IT-Bereich kontinuierlich erweitern.
+
+
+<br><br>
+
+
+Besonders interessieren mich:
+
 
 </p>
 
 
 
-<div class="tags">
+<div class="bio-list">
 
 
 <span>💻 Softwareentwicklung</span>
@@ -813,28 +852,30 @@ und immer neue Technologien kennenlernen.
 
 <span>🖥 Serveradministration</span>
 
-<span>🌐 Netzwerke</span>
+<span>🌍 Netzwerke</span>
 
 <span>🔐 Cybersecurity</span>
 
 <span>🐧 Linux</span>
 
-<span>🤖 Discord Bots</span>
+<span>🤖 Discord-Bot-Entwicklung</span>
 
 
 </div>
 
 
+
 <p>
 
-Langfristig möchte ich eigene größere Projekte entwickeln,
-mein Wissen weiter ausbauen und vielleicht einmal professionelle
-Software- und Webprojekte umsetzen.
+
+Langfristig möchte ich eigene größere Projekte entwickeln und mein Wissen weiter ausbauen.
+
 
 </p>
 
 
 </section>
+
 
 
 
@@ -845,15 +886,14 @@ Software- und Webprojekte umsetzen.
 <!-- Motto -->
 
 
-<section class="bio-section motto">
+<section class="bio-section">
 
 
-<div class="section-icon">
-🔥
-</div>
+<h2>
 
+🔥 Mein Motto
 
-<h2>Mein Motto</h2>
+</h2>
 
 
 
@@ -867,14 +907,16 @@ etwas Neues zu lernen."
 </div>
 
 
+
 <p>
 
 
-Ich glaube daran, dass man durch Neugier,
-Ausdauer und den Willen, sich weiterzuentwickeln,
-viel erreichen kann.
+Ich glaube daran, dass man durch Neugier, Ausdauer und den Willen,
+sich weiterzuentwickeln, viel erreichen kann.
+
 
 <br><br>
+
 
 Deshalb versuche ich, aus jedem Problem etwas mitzunehmen
 und jeden Tag ein kleines Stück dazuzulernen.
@@ -919,9 +961,6 @@ und jeden Tag ein kleines Stück dazuzulernen.
 
 
 
-
-
-
 <script>
 
 
@@ -940,6 +979,10 @@ window.location.href="/#private-bio";
 </script>
 
 
+
+
+
+</div>
 
 
 </body>
