@@ -4,7 +4,9 @@
 
 <url>
 
-<loc>https://deine-domain.de</loc>
+<loc>https://DEINE-DOMAIN.de/</loc>
+
+<priority>1.0</priority>
 
 </url>
 
