@@ -17,7 +17,7 @@ const texts = [
 ];
 
 
-let index = 0;
+let textIndex = 0;
 let charIndex = 0;
 let deleting = false;
 
@@ -25,77 +25,71 @@ let deleting = false;
 const typing = document.getElementById("typing");
 
 
-function type(){
+function typeWriter(){
 
     if(!typing) return;
 
 
-    const current = texts[index];
+    const currentText = texts[textIndex];
 
 
     if(!deleting){
 
-
         typing.textContent =
-        current.substring(0,charIndex);
+        currentText.substring(0,charIndex);
 
 
         charIndex++;
 
 
-        if(charIndex > current.length){
-
+        if(charIndex > currentText.length){
 
             deleting = true;
 
-
-            setTimeout(type,1500);
-
+            setTimeout(typeWriter,1500);
 
             return;
 
         }
 
 
-    } else {
+    }else{
 
 
         typing.textContent =
-        current.substring(0,charIndex);
+        currentText.substring(0,charIndex);
 
 
         charIndex--;
 
 
-
         if(charIndex < 0){
-
 
             deleting = false;
 
-
-            index =
-            (index + 1) % texts.length;
+            textIndex =
+            (textIndex + 1) % texts.length;
 
 
             charIndex = 0;
 
-
         }
-
 
     }
 
 
     setTimeout(
-        type,
+        typeWriter,
         deleting ? 60 : 100
     );
 
 }
 
 
-type();
+typeWriter();
+
+
+
 
 
 
@@ -106,10 +100,12 @@ type();
 // ================================
 
 
-document.querySelectorAll("nav a").forEach(link=>{
+document
+.querySelectorAll("nav a")
+.forEach(link=>{
 
 
-    link.addEventListener("click",e=>{
+    link.addEventListener("click",event=>{
 
 
         const target =
@@ -127,8 +123,7 @@ document.querySelectorAll("nav a").forEach(link=>{
 
             if(section){
 
-
-                e.preventDefault();
+                event.preventDefault();
 
 
                 section.scrollIntoView({
@@ -153,8 +148,12 @@ document.querySelectorAll("nav a").forEach(link=>{
 
 
 
+
+
+
+
 // ================================
-// Projekt Button
+// Hero Projekt Button
 // ================================
 
 
@@ -196,6 +195,10 @@ if(projectButton){
 
 
 
+
+
+
+
 // ================================
 // Maus Glow Effekt
 // ================================
@@ -203,40 +206,48 @@ if(projectButton){
 
 document.addEventListener(
 "mousemove",
-(e)=>{
+(event)=>{
 
 
     document.documentElement.style.setProperty(
 
         "--mouse-x",
 
-        e.clientX + "px"
+        `${event.clientX}px`
 
     );
-
 
 
     document.documentElement.style.setProperty(
 
         "--mouse-y",
 
-        e.clientY + "px"
+        `${event.clientY}px`
 
     );
 
 
 });
 
+
+
+
+
+
+
+
+
 // ================================
 // Dark Mode
 // ================================
 
 
-const toggle =
+const themeToggle =
 document.getElementById("theme-toggle");
 
 
-if(toggle){
+
+if(themeToggle){
 
 
     const savedTheme =
@@ -246,47 +257,49 @@ if(toggle){
 
     if(savedTheme === "light"){
 
-
         document.body.classList.add("light");
 
+        themeToggle.textContent = "☀️";
 
     }
 
 
 
 
-    toggle.addEventListener("click",()=>{
+
+    themeToggle.addEventListener("click",()=>{
 
 
         document.body.classList.toggle("light");
 
 
 
-        if(document.body.classList.contains("light")){
+        const isLight =
+        document.body.classList.contains("light");
 
 
-            localStorage.setItem(
-                "theme",
-                "light"
-            );
+
+        localStorage.setItem(
+
+            "theme",
+
+            isLight ? "light" : "dark"
+
+        );
 
 
-        } else {
 
+        themeToggle.textContent =
 
-            localStorage.setItem(
-                "theme",
-                "dark"
-            );
+        isLight ? "☀️" : "🌙";
 
-
-        }
 
 
     });
 
 
 }
+
 
 
 
@@ -298,34 +311,28 @@ if(toggle){
 // ================================
 
 
-const menu =
+const menuButton =
 document.querySelector(".menu");
 
 
-const nav =
+const navigation =
 document.getElementById("nav-links");
 
 
 
-if(menu && nav){
+if(menuButton && navigation){
 
 
-    menu.addEventListener("click",()=>{
+    menuButton.addEventListener("click",()=>{
 
 
-        nav.classList.toggle("active");
+        navigation.classList.toggle("active");
 
 
     });
 
 
 }
-
-
-
-
-
-
 
 // ================================
 // Sterne Hintergrund
@@ -345,16 +352,35 @@ if(canvas){
 
 
 
-    canvas.width =
-    window.innerWidth;
-
-
-    canvas.height =
-    window.innerHeight;
-
-
-
     let stars = [];
+
+
+
+    function resizeCanvas(){
+
+
+        canvas.width =
+        window.innerWidth;
+
+
+        canvas.height =
+        window.innerHeight;
+
+
+    }
+
+
+
+    resizeCanvas();
+
+
+
+    window.addEventListener(
+        "resize",
+        resizeCanvas
+    );
+
+
 
 
 
@@ -426,24 +452,18 @@ if(canvas){
 
 
 
-
             star.y += 0.2;
-
 
 
 
             if(star.y > canvas.height){
 
-
                 star.y = 0;
-
 
             }
 
 
-
         });
-
 
 
 
@@ -459,29 +479,9 @@ if(canvas){
     animateStars();
 
 
-
-
-
-
-    window.addEventListener(
-    "resize",
-    ()=>{
-
-
-        canvas.width =
-        window.innerWidth;
-
-
-
-        canvas.height =
-        window.innerHeight;
-
-
-
-    });
-
-
 }
+
+
 
 
 
@@ -502,114 +502,138 @@ document.getElementById("repos");
 if(repoBox){
 
 
-
-fetch(
-
-"https://api.github.com/users/justin-dev828/repos"
-
-)
+    fetch(
+        "https://api.github.com/users/justin-dev828/repos"
+    )
 
 
-
-.then(response=>{
-
-
-    if(!response.ok){
-
-        throw new Error(
-            "GitHub API Fehler"
-        );
-
-    }
+    .then(response=>{
 
 
-    return response.json();
+        if(!response.ok){
+
+            throw new Error(
+                "GitHub API Fehler"
+            );
+
+        }
 
 
-})
+        return response.json();
 
 
+    })
 
-.then(repos=>{
+
+    .then(repos=>{
+
+
+        repoBox.innerHTML = "";
 
 
 
-    repoBox.innerHTML = "";
+        repos
+        .slice(0,6)
+        .forEach(repo=>{
+
+
+            const safeDescription =
+
+            (repo.description ?? "Keine Beschreibung")
+
+            .replace(/</g,"&lt;")
+
+            .replace(/>/g,"&gt;");
 
 
 
-    repos
-    .slice(0,6)
-    .forEach(repo=>{
 
 
-        repoBox.innerHTML += `
+            repoBox.innerHTML += `
 
 
-        <div class="glass-card">
+            <div class="glass-card">
 
 
-            <h3>
+                <h3>
 
-            ${repo.name}
+                ${repo.name}
 
-            </h3>
+                </h3>
 
 
 
-            <p>
+                <p>
 
-            ${repo.description ?? "Keine Beschreibung"}
+                ${safeDescription}
 
-            </p>
-
-
-
-            <a 
-            href="${repo.html_url}" 
-            target="_blank">
-
-
-            Projekt ansehen
-
-
-            </a>
+                </p>
 
 
 
-        </div>
+                <a
+
+                href="${repo.html_url}"
+
+                target="_blank"
+
+                rel="noopener noreferrer">
 
 
-        `;
+                Projekt ansehen
+
+
+                </a>
+
+
+
+            </div>
+
+
+            `;
+
+
+
+        });
+
+
+
+    })
+
+
+    .catch(error=>{
+
+
+        console.error(error);
+
+
+
+        repoBox.innerHTML =
+
+        "❌ GitHub Projekte konnten nicht geladen werden";
 
 
     });
 
 
-
-})
-
-
-
-.catch(()=>{
-
-
-    repoBox.innerHTML =
-
-    "❌ GitHub Projekte konnten nicht geladen werden";
-
-
-});
-
-
 }
+
+
+
+
+
+
+
+
 
 // ================================
 // Ladeanimation
 // ================================
 
 
-window.addEventListener("load",()=>{
+window.addEventListener(
+"load",
+()=>{
 
 
     const loader =
@@ -618,7 +642,6 @@ window.addEventListener("load",()=>{
 
 
     if(loader){
-
 
 
         setTimeout(()=>{
@@ -631,7 +654,8 @@ window.addEventListener("load",()=>{
             setTimeout(()=>{
 
 
-                loader.style.display = "none";
+                loader.style.display =
+                "none";
 
 
             },500);
@@ -641,11 +665,11 @@ window.addEventListener("load",()=>{
         },2500);
 
 
-
     }
 
 
 });
+
 
 
 
@@ -672,108 +696,88 @@ document.getElementById("discord-text");
 if(discordText){
 
 
+    fetch(
 
-fetch(
+        `https://api.lanyard.rest/v1/users/${discordID}`
 
-`https://api.lanyard.rest/v1/users/${discordID}`
-
-)
-
-
-
-.then(response=>{
-
-
-    if(!response.ok){
-
-        throw new Error(
-            "Discord API Fehler"
-        );
-
-    }
-
-
-    return response.json();
-
-
-})
+    )
 
 
 
-.then(data=>{
+    .then(response=>{
+
+
+        if(!response.ok){
+
+            throw new Error(
+                "Discord API Fehler"
+            );
+
+        }
+
+
+        return response.json();
+
+
+    })
 
 
 
-    const user =
-    data.data;
+    .then(data=>{
+
+
+        const user =
+        data.data;
 
 
 
-
-    let activity =
-    "Keine Aktivität";
-
+        let activity =
+        "Keine Aktivität";
 
 
 
-
-    if(user.activities.length > 0){
-
-
-        activity =
-        user.activities[0].name;
+        if(user.activities.length > 0){
 
 
-    }
+            activity =
+            user.activities[0].name;
 
+
+        }
 
 
 
+        discordText.innerHTML = `
+
+        🟢 Online
+
+        <br>
+
+        🎮 ${activity}
+
+        `;
 
 
-    discordText.innerHTML = `
-
-
-    🟢 Online
-
-    <br>
-
-    🎮 ${activity}
-
-
-    `;
-
-
-
-
-})
+    })
 
 
 
-.catch(()=>{
+    .catch(error=>{
 
 
-    discordText.innerHTML =
-
-
-    "⚫ Discord Status nicht verfügbar";
+        console.error(error);
 
 
 
-});
+        discordText.innerHTML =
 
+        "⚫ Discord Status nicht verfügbar";
+
+
+    });
 
 
 }
-
-
-
-
-
-
-
-
-
 // ================================
 // Eigene GitHub Statistik
 // Vercel API
@@ -788,116 +792,101 @@ document.getElementById("github-card");
 if(githubCard){
 
 
+    fetch("/api/github")
 
-fetch("/api/github")
 
 
+    .then(response=>{
 
-.then(response=>{
 
+        if(!response.ok){
 
-    if(!response.ok){
+            throw new Error(
+                "GitHub API Fehler"
+            );
 
+        }
 
-        throw new Error(
-            "API Fehler"
-        );
 
+        return response.json();
 
-    }
 
+    })
 
-    return response.json();
 
 
-})
+    .then(data=>{
 
 
+        githubCard.innerHTML = `
 
-.then(data=>{
 
+        <img
 
+        src="${data.avatar}"
 
-    githubCard.innerHTML = `
+        class="github-avatar"
 
+        alt="GitHub Profilbild von ${data.username}"
 
+        loading="lazy">
 
-    <img
 
-    src="${data.avatar}"
+        <h3>
 
-    class="github-avatar"
+        ${data.username}
 
-    alt="GitHub Profilbild"
+        </h3>
 
 
 
-    >
+        <p>
 
+        📦 ${data.repos} öffentliche Projekte
 
+        </p>
 
 
-    <h3>
 
-    ${data.username}
+        <p>
 
-    </h3>
+        👥 ${data.followers} Follower
 
+        </p>
 
 
 
+        <p>
 
-    <p>
+        ➡️ Folgt ${data.following} Personen
 
-    📦 ${data.repos} öffentliche Projekte
+        </p>
 
-    </p>
 
+        `;
 
 
+    })
 
-    <p>
 
-    👥 ${data.followers} Follower
 
-    </p>
+    .catch(error=>{
 
 
+        console.error(error);
 
 
-    <p>
 
-    ➡️ Folgt ${data.following} Personen
+        githubCard.innerHTML =
 
-    </p>
+        "❌ GitHub Statistik konnte nicht geladen werden";
 
 
-
-    `;
-
-
-
-})
-
-
-
-.catch(()=>{
-
-
-
-    githubCard.innerHTML =
-
-
-
-    "❌ GitHub Statistik konnte nicht geladen werden";
-
-
-
-});
-
+    });
 
 
 }
+
 
 
 
@@ -913,13 +902,178 @@ fetch("/api/github")
 
 document
 .querySelectorAll("img")
-.forEach(img=>{
+.forEach(image=>{
 
 
-    img.loading = "lazy";
+    image.loading = "lazy";
 
 
 });
+
+
+
+
+
+
+
+
+
+// ================================
+// Kontaktformular
+// Vercel API + Resend Backend
+// ================================
+
+
+const contactForm =
+document.getElementById("contact-form");
+
+
+
+if(contactForm){
+
+
+    contactForm.addEventListener(
+        "submit",
+        async(event)=>{
+
+
+        event.preventDefault();
+
+
+
+        const formData =
+        new FormData(contactForm);
+
+
+
+        const data = {
+
+
+            name:
+            formData.get("name"),
+
+
+            email:
+            formData.get("email"),
+
+
+            message:
+            formData.get("message")
+
+
+        };
+
+
+
+        try{
+
+
+            const response =
+            await fetch(
+                "/api/contact",
+                {
+
+
+                method:"POST",
+
+
+                headers:{
+
+
+                    "Content-Type":
+                    "application/json"
+
+
+                },
+
+
+                body:
+                JSON.stringify(data)
+
+
+                }
+
+            );
+
+
+
+
+
+            if(response.ok){
+
+
+                alert(
+                    "Nachricht erfolgreich gesendet ✅"
+                );
+
+
+                contactForm.reset();
+
+
+
+            }else{
+
+
+                alert(
+                    "Fehler beim Senden ❌"
+                );
+
+
+            }
+
+
+
+        }catch(error){
+
+
+            console.error(error);
+
+
+
+            alert(
+                "Server nicht erreichbar ❌"
+            );
+
+
+        }
+
+
+
+    });
+
+
+}
+
+
+
+
+
+
+
+
+
+// ================================
+// Performance Verbesserungen
+// ================================
+
+
+// Externe Links absichern
+
+document
+.querySelectorAll(
+'a[target="_blank"]'
+)
+.forEach(link=>{
+
+
+    link.setAttribute(
+        "rel",
+        "noopener noreferrer"
+    );
+
+
+});
+
 
 
 
@@ -938,71 +1092,3 @@ console.log(
 "🚀 JustinByte.exe Portfolio erfolgreich geladen"
 
 );
-
-const contactForm = document.getElementById("contact-form");
-
-
-if(contactForm){
-
-
-contactForm.addEventListener("submit", async (e)=>{
-
-
-e.preventDefault();
-
-
-
-const formData = new FormData(contactForm);
-
-
-
-const data = {
-
-name:formData.get("name"),
-
-email:formData.get("email"),
-
-message:formData.get("message")
-
-};
-
-
-
-const response = await fetch("/api/contact",{
-
-method:"POST",
-
-headers:{
-
-"Content-Type":"application/json"
-
-},
-
-body:JSON.stringify(data)
-
-});
-
-
-
-if(response.ok){
-
-
-alert("Nachricht erfolgreich gesendet ✅");
-
-contactForm.reset();
-
-
-}else{
-
-
-alert("Fehler beim Senden ❌");
-
-
-}
-
-
-
-});
-
-
-}
