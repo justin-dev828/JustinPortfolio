@@ -1092,3 +1092,40 @@ console.log(
 "🚀 JustinByte.exe Portfolio erfolgreich geladen"
 
 );
+
+async function loginBio(){
+
+const password =
+document.getElementById("bio-password").value;
+
+
+const response = await fetch("/api/login",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+password
+})
+
+});
+
+
+const data = await response.json();
+
+
+if(data.success){
+
+window.location.href="private-bio.html";
+
+}else{
+
+document.getElementById("bio-message").innerHTML =
+"❌ Falsches Passwort";
+
+}
+
+}
