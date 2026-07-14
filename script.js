@@ -1,9 +1,13 @@
-// ===============================
+// =================================
 // JustinByte.exe Portfolio
 // script.js
-// ===============================
+// =================================
 
+
+// ================================
 // Schreibmaschinen-Effekt
+// ================================
+
 const texts = [
     "Developer 💻",
     "Discord Administrator 🤖",
@@ -12,117 +16,210 @@ const texts = [
     "Feuerwehr-Enthusiast 🚒"
 ];
 
+
 let index = 0;
 let charIndex = 0;
 let deleting = false;
 
+
 const typing = document.getElementById("typing");
 
-function type() {
 
-    if (!typing) return;
+function type(){
+
+    if(!typing) return;
+
 
     const current = texts[index];
 
-    if (!deleting) {
 
-        typing.textContent = current.substring(0, charIndex);
+    if(!deleting){
+
+        typing.textContent = current.substring(0,charIndex);
+
         charIndex++;
 
-        if (charIndex > current.length) {
+
+        if(charIndex > current.length){
+
             deleting = true;
-            setTimeout(type, 1500);
+
+            setTimeout(type,1500);
+
             return;
         }
 
+
     } else {
 
-        typing.textContent = current.substring(0, charIndex);
+
+        typing.textContent = current.substring(0,charIndex);
+
         charIndex--;
 
-        if (charIndex < 0) {
+
+        if(charIndex < 0){
+
             deleting = false;
+
             index = (index + 1) % texts.length;
+
             charIndex = 0;
+
         }
 
     }
 
-    setTimeout(type, deleting ? 60 : 100);
+
+    setTimeout(type,deleting ? 60 : 100);
+
 }
+
 
 type();
 
-// Sanftes Scrollen für alle Menülinks
-document.querySelectorAll('nav a').forEach(link => {
 
-    link.addEventListener("click", function (e) {
 
-        const target = this.getAttribute("href");
+// ================================
+// Smooth Scroll Navigation
+// ================================
 
-        if (target.startsWith("#")) {
 
-            e.preventDefault();
+document.querySelectorAll("nav a").forEach(link=>{
 
-            const section = document.querySelector(target);
 
-            if (section) {
+    link.addEventListener("click",e=>{
+
+
+        const target = link.getAttribute("href");
+
+
+        if(target.startsWith("#")){
+
+
+            const section =
+            document.querySelector(target);
+
+
+            if(section){
+
+                e.preventDefault();
+
+
                 section.scrollIntoView({
-                    behavior: "smooth"
+
+                    behavior:"smooth"
+
                 });
+
             }
+
         }
 
+
     });
+
 
 });
 
-// Button "Projekte ansehen"
-const projectButton = document.querySelector(".hero button");
 
-if (projectButton) {
 
-    projectButton.addEventListener("click", () => {
+// ================================
+// Projekt Button
+// ================================
 
-        const section = document.getElementById("projects");
 
-        if (section) {
-            section.scrollIntoView({
-                behavior: "smooth"
+const projectButton =
+document.querySelector(".hero button");
+
+
+if(projectButton){
+
+
+    projectButton.addEventListener("click",()=>{
+
+
+        const projects =
+        document.getElementById("projects");
+
+
+        if(projects){
+
+            projects.scrollIntoView({
+
+                behavior:"smooth"
+
             });
+
         }
 
+
     });
+
 
 }
 
-console.log("JustinByte.exe Portfolio erfolgreich geladen.");
 
-document.addEventListener("mousemove", (e)=>{
+
+// ================================
+// Maus Glow Effekt
+// ================================
+
+
+document.addEventListener("mousemove",(e)=>{
+
 
     document.documentElement.style.setProperty(
+
         "--mouse-x",
+
         e.clientX + "px"
+
     );
 
+
     document.documentElement.style.setProperty(
+
         "--mouse-y",
+
         e.clientY + "px"
+
     );
+
 
 });
+
+
+
+// ================================
+// Dark Mode
+// ================================
+
 
 const toggle =
 document.getElementById("theme-toggle");
 
 
-toggle.addEventListener(
-"click",
-()=>{
+if(toggle){
 
-document.body.classList.toggle("light");
 
-});
+    toggle.addEventListener("click",()=>{
+
+
+        document.body.classList.toggle("light");
+
+
+    });
+
+
+}
+
+
+
+// ================================
+// Mobile Menü
+// ================================
+
 
 const menu =
 document.querySelector(".menu");
@@ -132,187 +229,363 @@ const nav =
 document.getElementById("nav-links");
 
 
-menu.onclick = ()=>{
+if(menu && nav){
 
-nav.classList.toggle("active");
 
-};
+    menu.addEventListener("click",()=>{
+
+
+        nav.classList.toggle("active");
+
+
+    });
+
+
+}
+
+
+
+// ================================
+// Sterne Hintergrund
+// ================================
+
 
 const canvas =
 document.getElementById("stars");
 
 
-const ctx =
-canvas.getContext("2d");
+if(canvas){
 
 
-canvas.width=innerWidth;
-
-canvas.height=innerHeight;
-
-
-let stars=[];
+    const ctx =
+    canvas.getContext("2d");
 
 
-for(let i=0;i<150;i++){
+    canvas.width =
+    window.innerWidth;
 
-stars.push({
 
-x:Math.random()*canvas.width,
+    canvas.height =
+    window.innerHeight;
 
-y:Math.random()*canvas.height,
 
-size:Math.random()*2
 
-});
+    let stars=[];
+
+
+
+    for(let i=0;i<150;i++){
+
+
+        stars.push({
+
+            x:Math.random()*canvas.width,
+
+            y:Math.random()*canvas.height,
+
+            size:Math.random()*2
+
+        });
+
+
+    }
+
+
+
+    function animateStars(){
+
+
+        ctx.clearRect(
+
+            0,
+
+            0,
+
+            canvas.width,
+
+            canvas.height
+
+        );
+
+
+        ctx.fillStyle="white";
+
+
+
+        stars.forEach(star=>{
+
+
+            ctx.beginPath();
+
+
+            ctx.arc(
+
+                star.x,
+
+                star.y,
+
+                star.size,
+
+                0,
+
+                Math.PI * 2
+
+            );
+
+
+            ctx.fill();
+
+
+
+            star.y += 0.2;
+
+
+
+            if(star.y > canvas.height){
+
+                star.y = 0;
+
+            }
+
+
+        });
+
+
+
+        requestAnimationFrame(animateStars);
+
+
+    }
+
+
+    animateStars();
+
+
+
+    window.addEventListener("resize",()=>{
+
+
+        canvas.width =
+        window.innerWidth;
+
+
+        canvas.height =
+        window.innerHeight;
+
+
+    });
+
 
 }
 
 
 
-function animateStars(){
+
+// ================================
+// GitHub Projekte laden
+// ================================
 
 
-ctx.clearRect(
-0,
-0,
-canvas.width,
-canvas.height
-);
+const repoBox =
+document.getElementById("repos");
 
 
-ctx.fillStyle="white";
+if(repoBox){
 
-
-stars.forEach(s=>{
-
-
-ctx.beginPath();
-
-ctx.arc(
-s.x,
-s.y,
-s.size,
-0,
-Math.PI*2
-);
-
-
-ctx.fill();
-
-
-s.y+=0.2;
-
-
-if(s.y>canvas.height)
-s.y=0;
-
-
-});
-
-
-requestAnimationFrame(animateStars);
-
-
-}
-
-
-animateStars();
 
 fetch(
+
 "https://api.github.com/users/justin-dev828/repos"
+
 )
 
-.then(res=>res.json())
 
-.then(data=>{
-
-
-let box=document.getElementById("repos");
+.then(response=>response.json())
 
 
-data.slice(0,6).forEach(repo=>{
+.then(repos=>{
 
 
-box.innerHTML+=`
-
-<div class="glass-card">
-
-<h3>${repo.name}</h3>
-
-<p>${repo.description ?? "Keine Beschreibung"}</p>
-
-<a href="${repo.html_url}">
-Projekt ansehen
-</a>
-
-</div>
+    repos.slice(0,6).forEach(repo=>{
 
 
-`;
+        repoBox.innerHTML += `
+
+
+        <div class="glass-card">
+
+
+            <h3>
+
+            ${repo.name}
+
+            </h3>
+
+
+            <p>
+
+            ${repo.description ?? "Keine Beschreibung"}
+
+            </p>
+
+
+            <a href="${repo.html_url}" target="_blank">
+
+            Projekt ansehen
+
+            </a>
+
+
+        </div>
+
+
+        `;
+
+
+    });
+
+
+})
+
+
+.catch(()=>{
+
+
+    repoBox.innerHTML =
+    "GitHub Projekte konnten nicht geladen werden.";
 
 
 });
 
 
-});
+}
+
+
+
+
+// ================================
+// Ladeanimation
+// ================================
+
 
 window.addEventListener("load",()=>{
 
 
-setTimeout(()=>{
+    const loader =
+    document.querySelector(".loader");
 
 
-document.querySelector(".loader").style.display="none";
+    if(loader){
 
 
-},2500);
+        setTimeout(()=>{
+
+
+            loader.style.opacity="0";
+
+
+            setTimeout(()=>{
+
+
+                loader.style.display="none";
+
+
+            },500);
+
+
+
+        },2500);
+
+
+    }
 
 
 });
 
-const discordID="1400088747894378711";
+
+
+
+// ================================
+// Discord Status (Lanyard)
+// ================================
+
+
+const discordID =
+"1400088747894378711";
+
+
+const discordText =
+document.getElementById("discord-text");
+
+
+
+if(discordText){
 
 
 fetch(
+
 `https://api.lanyard.rest/v1/users/${discordID}`
+
 )
 
-.then(res=>res.json())
+
+.then(response=>response.json())
+
 
 .then(data=>{
 
 
-let status=data.data;
-
-
-let text=document.getElementById(
-"discord-text"
-);
+    const user =
+    data.data;
 
 
 
-if(status.activities.length){
+    if(user.activities.length > 0){
 
-text.innerHTML=
 
-`
-🟢 Online<br>
 
-${status.activities[0].name}
+        discordText.innerHTML = `
 
-`;
 
-}
+        🟢 Online<br>
 
-else{
+        🎮 ${user.activities[0].name}
 
-text.innerHTML=
 
-"🟢 Online";
+        `;
 
-}
 
+
+    }else{
+
+
+        discordText.innerHTML =
+
+        "🟢 Online";
+
+
+    }
+
+
+
+})
+
+
+.catch(()=>{
+
+
+    discordText.innerHTML =
+
+    "⚫ Status nicht verfügbar";
 
 
 });
+
+
+}
+
+
+
+console.log(
+"JustinByte.exe Portfolio erfolgreich geladen 🚀"
+);
