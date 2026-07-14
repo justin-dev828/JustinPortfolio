@@ -510,80 +510,95 @@ window.addEventListener("load",()=>{
 // ================================
 
 
-const discordID =
-"1400088747894378711";
+const discordID = "1400088747894378711";
+
+const discordText = document.getElementById("discord-text");
 
 
-const discordText =
-document.getElementById("discord-text");
+async function loadDiscordStatus(){
+
+try{
 
 
-
-if(discordText){
-
-
-fetch(
-
+const res = await fetch(
 `https://api.lanyard.rest/v1/users/${discordID}`
-
-)
-
-
-.then(response=>response.json())
+);
 
 
-.then(data=>{
-
-
-    const user =
-    data.data;
+const json = await res.json();
 
 
 
-    if(user.activities.length > 0){
+if(!json.success || !json.data.discord_user){
+
+discordText.innerHTML =
+"⚫ Discord nicht verbunden";
+
+return;
+
+}
 
 
 
-        discordText.innerHTML = `
-
-
-        🟢 Online<br>
-
-        🎮 ${user.activities[0].name}
-
-
-        `;
+const data = json.data;
 
 
 
-    }else{
+let status = "⚪ Offline";
 
 
-        discordText.innerHTML =
+if(data.discord_status === "online"){
+status="🟢 Online";
+}
 
-        "🟢 Online";
+if(data.discord_status === "idle"){
+status="🌙 Abwesend";
+}
 
-
-    }
-
-
-
-})
-
-
-.catch(()=>{
+if(data.discord_status === "dnd"){
+status="🔴 Nicht stören";
+}
 
 
-    discordText.innerHTML =
 
-    "⚫ Status nicht verfügbar";
+let activity="Keine Aktivität";
 
 
-});
+if(data.activities.length){
+
+activity =
+data.activities[0].name;
+
+}
+
+
+
+discordText.innerHTML=`
+
+${status}
+
+<br><br>
+
+🎮 ${activity}
+
+`;
+
 
 
 }
 
+catch(error){
+
+discordText.innerHTML=
+"❌ Fehler beim Laden";
+
+}
+
+
+}
+
+
+loadDiscordStatus();
 
 
 console.log(
