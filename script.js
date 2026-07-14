@@ -1106,7 +1106,7 @@ document.getElementById("bio-password").value;
 
 
 
-const response = await fetch("/api/bio-login",{
+const response = await fetch("/api/login",{
 
 
 method:"POST",
