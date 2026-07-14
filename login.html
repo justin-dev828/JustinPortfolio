@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JustinByte.exe | Login</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        body{
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            min-height:100vh;
+
+            background:#050816;
+
+            overflow:hidden;
+
+        }
+
+        .login-container{
+
+            width:420px;
+            max-width:90%;
+
+            padding:40px;
+
+            border-radius:25px;
+
+            background:rgba(255,255,255,.06);
+
+            backdrop-filter:blur(20px);
+
+            border:1px solid rgba(255,255,255,.1);
+
+            box-shadow:0 0 40px rgba(56,189,248,.2);
+
+            animation:fadeUp .6s ease;
+
+        }
+
+        .login-container h1{
+
+            text-align:center;
+
+            color:#38bdf8;
+
+            margin-bottom:10px;
+
+            font-size:34px;
+
+            text-shadow:0 0 20px #38bdf8;
+
+        }
+
+        .login-container p{
+
+            text-align:center;
+
+            color:#94a3b8;
+
+            margin-bottom:35px;
+
+        }
+
+        .login-container input{
+
+            width:100%;
+
+            padding:16px;
+
+            margin-bottom:20px;
+
+            border:none;
+
+            outline:none;
+
+            border-radius:15px;
+
+            background:#0f172a;
+
+            color:white;
+
+            font-size:16px;
+
+        }
+
+        .login-container button{
+
+            width:100%;
+
+            padding:16px;
+
+            border:none;
+
+            border-radius:15px;
+
+            cursor:pointer;
+
+            font-size:17px;
+
+            font-weight:bold;
+
+            color:white;
+
+            background:linear-gradient(45deg,#38bdf8,#8b5cf6);
+
+            transition:.3s;
+
+        }
+
+        .login-container button:hover{
+
+            transform:scale(1.03);
+
+            box-shadow:0 0 25px #38bdf8;
+
+        }
+
+        #login-error{
+
+            color:#ef4444;
+
+            text-align:center;
+
+            margin-top:20px;
+
+            display:none;
+
+        }
+
+        @keyframes fadeUp{
+
+            from{
+
+                opacity:0;
+                transform:translateY(40px);
+
+            }
+
+            to{
+
+                opacity:1;
+                transform:translateY(0);
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <h1>🔒 Privater Bereich</h1>
+
+    <p>
+        Dieser Bereich ist passwortgeschützt.
+    </p>
+
+    <input
+        id="password"
+        type="password"
+        placeholder="Passwort">
+
+    <button onclick="login()">
+
+        Anmelden
+
+    </button>
+
+    <p id="login-error">
+
+        Falsches Passwort.
+
+    </p>
+
+</div>
+
+<script>
+
+async function login(){
+
+    const password =
+    document.getElementById("password").value;
+
+    const response = await fetch("/api/login",{
+
+        method:"POST",
+
+        headers:{
+            "Content-Type":"application/json"
+        },
+
+        body:JSON.stringify({
+            password
+        })
+
+    });
+
+    if(response.ok){
+
+        location.href="/private/";
+
+    }
+
+    else{
+
+        document.getElementById("login-error").style.display="block";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
